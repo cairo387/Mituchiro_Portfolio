@@ -17,7 +17,7 @@
             <li><%= link_to "HOME", root_path, class:"nav-color ml-5" %></li>
             <li><%= link_to "ABOUT", about_path, class:"nav-color ml-4" %></li>
             <li><%= link_to "ARTICLES", articles_path, class:"nav-color ml-4" %></li>
-           <%# <li><%= link_to "CHIROPRACTORS", chiropractors_path, class:"nav-color ml-4" %> <%# </li> %>
+            <li><%= link_to "CHIROPRACTORS", chiropractors_path, class:"nav-color ml-4" %></li>
             <li><%= link_to "ADMINISTRATOR", new_admin_session_path, class:"nav-color ml-4" %></li>
             <% if user_signed_in? %>
               <li><%= link_to "LOGOUT", destroy_user_session_path, method: :delete, class:"nav-color ml-4" %></li>
