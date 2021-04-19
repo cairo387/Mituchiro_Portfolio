@@ -4,7 +4,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  #画像投稿用(refile)
+  has_many :favorites, dependent: :destroy
+  has_many :reviews, dependent: :destroy
+
+   #画像投稿用(refile)
   attachment :image
 
   enum sex: {
@@ -12,4 +15,8 @@ class User < ApplicationRecord
     female: 1,
     not_applicable: 2,
   }
+
+  def favorited_by?(chiropractor_id)
+    favorites.where(chiropractor_id: chiropractor_id).exists?
+  end
 end

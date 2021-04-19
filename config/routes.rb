@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   root to: 'homes#top'
   get '/about' => 'homes#about'
   resources :articles, only: [:index, :show]
-   resources :chiropractors, only: [:index]
+   resources :chiropractors, only: [:index] do
+    resource :favorites, only: [:create, :destroy]
+  end
 
   devise_for :chiropractors, controllers: {
   sessions: 'chiropractors/sessions',
