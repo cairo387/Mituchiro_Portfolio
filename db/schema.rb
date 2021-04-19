@@ -10,7 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_19_152614) do
+ActiveRecord::Schema.define(version: 2021_04_19_153907) do
+
+  create_table "chiropractors", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer "treatment_id"
+    t.string "nickname"
+    t.string "name"
+    t.string "postal_code"
+    t.integer "prefecture_code"
+    t.string "address_city"
+    t.string "address_street"
+    t.string "phone_number"
+    t.string "image_id"
+    t.integer "fare", default: 0
+    t.integer "service_charge", default: 4000
+    t.integer "age"
+    t.integer "sex", default: 2
+    t.string "nearest_station"
+    t.integer "treatment_time", default: 30
+    t.boolean "chiropractors_status", default: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_chiropractors_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_chiropractors_on_reset_password_token", unique: true
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
