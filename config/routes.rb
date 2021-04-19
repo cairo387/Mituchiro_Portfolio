@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :articles, only: [:index, :show]
    resources :chiropractors, only: [:index] do
     resource :favorites, only: [:create, :destroy]
+    resource :reviews, only: [:create, :destroy]
   end
 
   devise_for :chiropractors, controllers: {

@@ -17,4 +17,14 @@
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
+//= require jquery
+//= require moment
+//= require fullcalendar
+//= require jquery.raty.js
 //= require_tree .
+
+$(() => {
+  $(document).on('turbolinks:load', () => {
+    $('#calendar').fullCalendar({})
+  })
+})
