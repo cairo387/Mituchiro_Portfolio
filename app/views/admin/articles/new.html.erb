@@ -1,0 +1,41 @@
+<div class="breadcrumb-navigation">
+  <i class="fa fa-angle-right">&nbsp;</i>
+  <span>HOME<span>
+  <i class="fa fa-angle-right">&nbsp;</i>
+  <span>ARTICELS<span>
+  <i class="fa fa-angle-right">&nbsp;</i>
+  <span>NEW POST<span>
+
+<div class="PageHead-article">
+  <div class="PageHead-article_title">
+    <h2>ARTICLES</h2>
+  </div>
+  <div class="PageHead-article_text">
+    <h2>記事の新規投稿ができる画面です。</h2>
+  </div>
+
+<div class="article-display">
+  <h1 class="article-display_title">New Post</h1>
+  <%= form_with model:@article, url: admin_articles_path, local:true do |f| %>
+    <div class="article-display_form">
+      <h4>タイトル</h4>
+      <div class="form-group form-inline">
+        <%= f.text_field :title, autofocus: true, autocomplete: "title", class:"form-control col-sm-7"  %>
+      </div>
+
+      <h4>サムネイル用画像</h4>
+      <div class="form-group form-inline">
+        <%= f.attachment_field :image,class:"col-sm-7" %>
+      </div>
+
+      <h4>本文</h4>
+      <div class="form-group form-inline">
+        <%= f.text_area :body, autofocus: true, autocomplete: "body", size: "30x40", class:"form-control col-sm-7" %>
+      </div>
+
+      <div class="article-button">
+        <%= f.submit "記事を投稿する", class:"btn btn-secondary col-sm-6" %>
+      </div>
+    </div>
+  <% end %>
+</div>

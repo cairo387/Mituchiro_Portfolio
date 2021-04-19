@@ -1,0 +1,43 @@
+<div class="breadcrumb-navigation">
+  <i class="fa fa-angle-right">&nbsp;</i>
+  <span>HOME<span>
+  <i class="fa fa-angle-right">&nbsp;</i>
+  <span>ARTICELS<span>
+  <i class="fa fa-angle-right">&nbsp;</i>
+  <span>SHOW<span>
+  <i class="fa fa-angle-right">&nbsp;</i>
+  <span>EDIT<span>
+
+<div class="PageHead-article">
+  <div class="PageHead-article_title">
+    <h2>ARTICLES</h2>
+  </div>
+  <div class="PageHead-article_text">
+    <h2>投稿された記事の編集ページです。</h2>
+  </div>
+</div>
+
+<div class="article-edit_display">
+  <%= form_with model:@article, url: admin_article_path, local:true do |f| %>
+    <div class="article-display_form">
+      <h4>タイトル</h4>
+      <div class="form-group form-inline">
+        <%= f.text_field :title, autofocus: true, autocomplete: "title", class:"form-control col-sm-7"  %>
+      </div>
+
+      <h4>サムネイル用画像</h4>
+      <div class="form-group form-inline">
+        <%= f.attachment_field :image,class:"col-sm-7" %>
+      </div>
+
+      <h4>本文</h4>
+      <div class="form-group form-inline">
+        <%= f.text_area :body, autofocus: true, autocomplete: "body", size: "30x40", class:"form-control col-sm-7" %>
+      </div>
+
+      <div class="article-button">
+        <%= f.submit "編集した記事を投稿する", class:"btn btn-secondary col-sm-6" %>
+      </div>
+    </div>
+  <% end %>
+</div>

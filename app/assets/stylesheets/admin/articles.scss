@@ -1,3 +1,78 @@
 // Place all the styles related to the Admin::articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+//新規投稿画面ここから
+ .breadcrumb-navigation_login {
+  position: relative;
+  top: 48px;
+  left: 190px;
+ }
+
+ .breadcrumb-navigation_login i {
+  margin-left: 10px;
+  }
+
+  .breadcrumb-navigation_login span {
+  font-weight: 100;
+  margin: 0 8px;
+ }
+
+ .pageHead_article {
+  display: flex;
+  padding-bottom: 5px;
+ }
+ .PageHead_article_title {
+  background-color: #fff;
+  margin-top: 10px;
+  height: 98px;
+  width: 160px;
+  border-radius: 0 10px 10px 0;
+  text-align: center;
+ }
+ .PageHead_login_title h2 {
+  font-weight: 600;
+  font-family: 'Comic Sans MS';
+  line-height: 98px;
+ }
+ .PageHead_article_text {
+  position: relative;
+  bottom: 108px;
+  left: 162px;
+  background-color: #fff;
+  margin-top: 10px;
+  height: 98px;
+  width: 100%;
+  border-radius: 0 10px 10px 0;
+  text-align: center;
+ }
+
+ .article-display_title {
+  padding-top: 60px;
+  font-weight: 600;
+  font-family: 'Comic Sans MS';
+  text-align: center;
+ }
+
+ .article-display_form {
+  padding-top: 40px;
+  padding-left: 380px;
+  color: #444444;
+ }
+
+ .article-button {
+  text-align: center;
+  padding-top: 60px;
+  padding-right: 450px;
+ }
+ //新規投稿画面ここまで
+
+ //投稿記事編集画面ここから
+ .article-edit_display {
+  position: relative;
+  bottom: 102px;
+  background-color: #fff;
+  width: 86.8%;
+  height: 100%;
+  padding-bottom: 100px;
+ }
+ //新規記事編集画面ここまで
