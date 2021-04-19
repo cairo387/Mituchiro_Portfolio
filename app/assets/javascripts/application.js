@@ -20,7 +20,6 @@
 //= require jquery
 //= require moment
 //= require fullcalendar
-//= require jquery.raty.js
 //= require_tree .
 
 $(() => {
