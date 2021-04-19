@@ -1,29 +1,111 @@
-<h2>Sign up</h2>
+<div class="breadcrumb-navigation_login">
+  <i class="fa fa-angle-right">&nbsp;</i>
+  <span>CHIROPRACTATOR<span>
+  <i class="fa fa-angle-right">&nbsp;</i>
+  <span>REGISTRATION<span>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "chiropractors/shared/error_messages", resource: resource %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+<div class="PageHead_signup">
+  <div class="PageHead_signup_title">
+    <h2>REGISTRATION</h2>
   </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+  <div class="PageHead_signup_text">
+    <h2>LOGIN</h2>
   </div>
+</div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+<div class="signup_chiropractor-display">
+  <h1 class="signup_chiropractor-display_title">REGISTRATION</h1>
+  <h4 class="signup_chiropractor-display_text">
+    会員登録の前に、必ず利用規約をお読みください。<br>
+    以下の項目をご入力いただき、「新規登録する」ボタンを押してください。<br>
+    <br><br>
+    <span class="required_item">こちらは整体師の方向けの新規登録ページです。</span>
+  </h4>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= render "chiropractors/shared/error_messages", resource: resource %>
+    <div class="signup-display_form">
+      <div class="form-group form-inline">
+        <%= f.label :nickname, 'ニックネーム', class:"col-sm-2 control-label font-weight-lighter small" %>
+        <%= f.text_field :nickname, autofocus: true, autocomplete: "nickname", placeholder: "", class:"form-control col-sm-4" %>
+      </div>
+
+      <div class="form-group form-inline mt-4">
+        <%= f.label :name, 'お名前（姓・名）', class:"col-sm-2 control-label font-weight-lighter small" %>
+        <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "氏名（姓・名）", class:"form-control col-sm-4" %>
+      </div>
+
+      <div class="form-group form-inline">
+        <%= f.label :sex, "性別", class:"col-sm-2 control-label font-weight-lighter small" %>
+        <%= f.radio_button :sex, "male", checked: true %>
+        <h5 class="mt-2 ml-1">男性</h5>
+        <%= f.radio_button :sex, "female", class:"ml-4" %>
+        <h5 class="mt-2 ml-1">女性</h5>
+      </div>
+
+      <div class="form-group form-inline mt-4">
+        <%= f.label :postal_code, '郵便番号', class:"col-sm-2 control-label font-weight-lighter small" %>
+        <%= f.text_field :postal_code, autofocus: true, autocomplete: "postal_code", placeholder: "0000000", class:"form-control col-sm-2" %>
+      </div>
+
+      <div class="form-group form-inline mt-4">
+        <div class="col-sm-2"></div>
+        <%= f.text_field :address_city, autofocus: true, autocomplete: "address_city", placeholder: "市区町村名", class:"form-control col-sm-4" %>
+      </div>
+
+      <div class="form-group form-inline mt-4">
+        <div class="col-sm-2"></div>
+        <%= f.text_field :address_street, autofocus: true, autocomplete: ":address_street", placeholder: "番地・ビル名", class:"form-control col-sm-4" %>
+      </div>
+
+      <div class="form-group form-inline mt-4">
+        <%= f.label :nearest_station, '最寄り駅', class:"col-sm-2 control-label font-weight-lighter small" %>
+        <%= f.text_field :nearest_station, autofocus: true, autocomplete: "nearest_station", placeholder: "東京駅", class:"form-control col-sm-4" %>
+      </div>
+
+      <div class="form-group form-inline mt-4">
+        <%= f.label :service_charge, 'サービス料', class:"col-sm-2 control-label font-weight-lighter small" %>
+        <%= f.text_field :service_charge, autofocus: true, autocomplete: "service_charge", placeholder: "一時間当たりのサービス料を入力してください。", class:"form-control col-sm-4" %>
+      </div>
+
+      <div class="form-group form-inline mt-4">
+        <%= f.label :fare, '運賃料', class:"col-sm-2 control-label font-weight-lighter small" %>
+        <%= f.text_field :fare, autofocus: true, autocomplete: "service_charge", placeholder: "運賃料を入力してください。", class:"form-control col-sm-4" %>
+      </div>
+
+      <div class="form-group form-inline mt-4">
+        <%= f.label :age, '年齢', class:"col-sm-2 control-label font-weight-lighter small" %>
+        <%= f.text_field :age, autofocus: true, autocomplete: "age", placeholder: "数字のみを入力してください。", class:"form-control col-sm-4" %>
+      </div>
+
+      <div class="form-group form-inline mt-4">
+        <%= f.label :phone_number, '電話番号', class:"col-sm-2 control-label font-weight-lighter small" %>
+        <%= f.text_field :postal_code, autofocus: true, autocomplete: "postal_code", placeholder: "00000000000", class:"form-control col-sm-4" %>
+      </div>
+
+      <div class="form-group form-inline mt-4">
+        <%= f.label :email, 'メールアドレス', class:"col-sm-2 control-label font-weight-lighter small" %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "sample@example.com", class:"form-control col-sm-4" %>
+      </div>
+
+      <div class="form-group form-inline mt-4">
+        <%= f.label :treatment_time, '施術時間(分)', class:"col-sm-2 control-label font-weight-lighter small" %>
+        <%= f.text_field :treatment_time, autofocus: true, autocomplete: "treatment_time", placeholder: "施術時間を数字のみ入力してください。", class:"form-control col-sm-4" %>
+      </div>
+
+      <div class="form-group form-inline mt-4">
+        <%= f.label :password, 'パスワード(6文字以上)', class:"col-sm-2 control-label font-weight-lighter small" %>
+        <%= f.password_field :password, autocomplete: "new-password", class:"col-sm-4 form-control" %>
+      </div>
+
+      <div class="form-group form-inline mt-4">
+        <%= f.label :password_confirmation,'パスワード(確認用)', class:"col-sm-2 control-label font-weight-lighter small" %>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"col-sm-4 form-control" %>
+      </div>
+
+      <div class="signup-button">
+        <%= f.submit "新規登録する", class:"btn btn-secondary col-sm-6" %>
+      </div>
+    </div>
 <% end %>
-
-<%= render "chiropractors/shared/links" %>
+</div>

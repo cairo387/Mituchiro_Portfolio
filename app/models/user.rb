@@ -3,4 +3,13 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  #画像投稿用(refile)
+  attachment :image
+
+  enum sex: {
+    male: 0,
+    female: 1,
+    not_applicable: 2,
+  }
 end
