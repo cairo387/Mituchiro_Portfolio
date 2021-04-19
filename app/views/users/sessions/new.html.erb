@@ -1,26 +1,40 @@
-<h2>Log in</h2>
+<div class="breadcrumb-navigation_login">
+  <i class="fa fa-angle-right">&nbsp;</i>
+  <span>LOGIN<span>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+<div class="PageHead_login">
+  <div class="PageHead_login_title">
+    <h2>LOGIN</h2>
   </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
+  <div class="PageHead_login_text">
+    <h2>LOGIN</h2>
   </div>
+</div>
 
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+<div class="login-display">
+  <h1 class="login-display_title">LOGIN</h1>
+  <h4 class="login-display_text">
+    マイページや予約機能のご利用にはログインが必要です。<br>
+    ご登録いただいたメールアドレスとパスワードを入力し、<br>
+    「ログインする」ボタンを押してください。
+  </h4>
+
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="login-display_form">
+      <div class="form-group form-inline">
+        <%= f.label :email, 'メールアドレス', class:"col-sm-2 control-label font-weight-lighter small" %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "sample@example.com", class:"form-control col-sm-4" %>
+      </div>
+
+      <div class="form-group form-inline">
+        <%= f.label :password, 'パスワード', class:"col-sm-2 control-label font-weight-lighter small" %>
+        <%= f.password_field :password, autocomplete: "new-password", class:"form-control col-sm-4" %>
+      </div>
+
+      <div class="login-button">
+        <%= f.submit "ログイン", class:"btn btn-secondary col-sm-6" %>
+      </div>
     </div>
   <% end %>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
-
-<%= render "users/shared/links" %>
+  <h4 class="login-display_induction">整体師の方向けのログインページは<%= link_to "こちら", new_chiropractor_session_path, class:"signup-display_induction-link" %></h4>
+</div>

@@ -160,8 +160,9 @@
   position: relative;
   background-color: #fff;
   bottom: 102px;
-  height: 685px;
+  height: 100%;
   width: 87%;
+  padding-bottom: 100px;
  }
 
  .login-display h1{
@@ -179,7 +180,7 @@
 
  .login-display_form {
   padding-top: 40px;
-  padding-left: 280px;
+  padding-left: 320px;
   color: #444444;
  }
 
@@ -191,6 +192,20 @@
 
  .btn-secondary:hover {
   background-color: #99CCCC;
+ }
+  .login-display_induction {
+  padding-top: 70px;
+  padding-right: 25px;
+  font-size: 20px;
+  text-align:center;
+ }
+ .login-display_induction-link {
+  text-decoration: none;
+  color: #000;
+ }
+  .login-display_induction-link:hover {
+  text-decoration: none;
+  color: #bbbbbb;
  }
 
  //顧客側ログイン画面ここまで
@@ -281,7 +296,7 @@
   padding-right: 340px;
  }
  .signup-display_induction {
-  padding-top: 100px;
+  padding-top: 70px;
   padding-right: 70px;
   font-size: 20px;
   text-align:center;
