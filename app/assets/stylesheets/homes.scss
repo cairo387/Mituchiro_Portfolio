@@ -1,3 +1,143 @@
 // Place all the styles related to the homes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+//Top画面ここから
+.Slide {
+  position:relative;
+  top: 50px;
+  left: 195px;
+}
+
+.top-image {
+  background: image-url("top-image.png") no-repeat;
+  background-size: contain;
+  height: 683px;
+  width: 1024px;
+}
+
+.top-message {
+  width: 1024px;
+  height: 151px;
+  background-color: #fff;
+ }
+
+ .top-message h2 {
+  text-align: center;
+  padding-top: 30px;
+  font-size: 24px;
+ }
+
+ .top-message-buttton {
+  text-align: center;
+  padding-top: 15px;
+ }
+
+ .top-display_solicitation {
+  background-color: #fff;
+  position:relative;
+  top: 100px;
+  left: 770px;
+  width: 256px;
+  height: 400px;
+  text-align:center;
+ }
+
+ .top-display-solicitation_text {
+  color: #333333;
+  font-size: 20px;
+  padding-top: 90px;
+ }
+
+
+//Top画面ここまで
+
+//About画面ここから
+
+//パンくずリスト
+ .breadcrumb-navigation {
+  position: relative;
+  top: 48px;
+  left: 190px;
+ }
+  .breadcrumb-navigation i {
+  margin-left: 10px;
+  }
+  .breadcrumb-navigation span {
+  font-weight: 100;
+  margin: 0 8px;
+ }
+ .pageHead {
+  display: flex;
+  padding-bottom: 5px;
+ }
+ .PageHead_title {
+  background-color: #fff;
+  margin-top: 10px;
+  height: 98px;
+  width: 160px;
+  border-radius: 0 10px 10px 0;
+  text-align: center;
+ }
+ .PageHead_title h2 {
+  font-weight: 600;
+  font-family: 'Comic Sans MS';
+  line-height: 98px;
+ }
+
+ .PageHead_text {
+  position: relative;
+  bottom: 108px;
+  left: 162px;
+  background-color: #fff;
+  margin-top: 10px;
+  height: 98px;
+  width: 76%;
+  border-radius: 0 10px 10px 0;
+  text-align: center;
+ }
+
+ .main-page {
+  position: relative;
+  bottom: 103px;
+  background-color: #fff;
+  width: 87%;
+  height: 1556px;
+ }
+
+ .main-title h1{
+  padding-top: 30px;
+  font-weight: 600;
+  font-family: 'Comic Sans MS';
+  line-height: 98px;
+  text-align: center;
+ }
+ .main-page_logo {
+  position: relative;
+  background: image-url("logo2.png") no-repeat;
+  background-size: contain;
+  width: 292px;
+  height: 112px;
+  margin : 0 auto;
+  right: 50px;
+ }
+
+ .main-page_text {
+  position: relative;
+  bottom: 74px;
+  left: 740px;
+ }
+ .main-page_text2 {
+  position: relative;
+  bottom: 28px;
+  left: 245px;
+ }
+ .main-page_image {
+  position: relative;
+  left: 246px;
+  background: image-url("about-image.jpg") no-repeat;
+  background-size: contain;
+  height: 515px;
+  width: 762px;
+}
+//About画面ここまで

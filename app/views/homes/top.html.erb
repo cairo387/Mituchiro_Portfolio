@@ -1,2 +1,18 @@
-<h1>Homes#top</h1>
-<p>Find me in app/views/homes/top.html.erb</p>
+<div class="Slide">
+  <h1 class="top-image"></h1>
+  <div class="top-message">
+    <h2>みつかいろならあなたに合った整体師さんが見つかる</h2>
+    <div class="top-message-buttton">
+      <%#<%= link_to "整体師さんを探す", chiropractors_path, class:"btn btn-lg btn-secondary" %>
+    </div>
+    <div class="top-display_solicitation">
+      <h4 class="top-display-solicitation_text">
+        新規登録をして<br>
+        メンバーになりませんか？
+      </h4>
+      <div class="top_button">
+        <%= link_to "整体師として登録する", new_chiropractor_registration_path, class:"btn btn-secondary btn-lg mt-5" %>
+        <%= link_to "依頼者として登録する", new_user_registration_path, class:"btn btn-secondary btn-lg mt-5" %>
+      </div>
+    </div>
+</div>

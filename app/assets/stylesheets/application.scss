@@ -1,0 +1,343 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+*= require_tree .
+ *= require_self
+ *= require fullcalendar
+ */
+
+ @import "bootstrap";
+ @import 'font-awesome-sprockets';
+ @import 'font-awesome';
+
+ //画面全体の色を指定
+ body {
+  background: rgb(218, 220, 222);
+ }
+
+ ol, ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+ }
+
+//headerのライン
+ .l-header {
+  background: #fff;
+  font-family: "sans-serif";
+  font-size: 11px;
+  height: 40px;
+  left: 0;
+  padding: 10px 0 10px 220px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+ }
+
+ //logoについて
+  .header-logo {
+  background: image-url("logo.png") no-repeat;
+  background-size: contain;
+  height: 180px;
+  left: 5px;
+  padding: 20px 35px 35px;
+  position: absolute;
+  top: 0;
+  width: 180px;
+  display: inline-block;
+ }
+
+ .nav-main {
+  display: flex;
+ }
+
+ .nav-color {
+  color: #000;
+ }
+
+ //ヘッダーホバーしたときの色を指定
+ .nav-color:hover {
+  color: #bbbbbb;
+  text-decoration: none;
+ }
+
+ //新規登録、ログイン、マイページ用の四角
+ .l-header_header-box {
+  display: flex;
+  margin: 0 5px 0 auto;
+ }
+
+ .l-header_header-box li {
+  background: #433c3a;
+  border-radius: 0 0 0 10px;
+  margin-left: 10px;
+  height: 60px;
+  text-align: center;
+  width: 100px;
+  position: relative;
+ }
+
+ .l-header_header-box li:hover {
+  background: #99CCCC;
+ }
+
+  .header-box_color {
+   color: #fff;
+   display: block;
+   height: 100%;
+   padding-top: 12px;
+   position: relative;
+   z-index: 1;
+ }
+
+ .header-box_color:hover {
+   color: #fff;
+   text-decoration: none;
+ }
+
+ .header-box_icon {
+   color: #fff;
+   position: relative;
+   bottom: 25px;
+ }
+
+ //顧客側ログイン画面ここから
+ .breadcrumb-navigation_login {
+  position: relative;
+  top: 48px;
+  left: 190px;
+ }
+
+ .breadcrumb-navigation_login i {
+  margin-left: 10px;
+  }
+
+  .breadcrumb-navigation_login span {
+  font-weight: 100;
+  margin: 0 8px;
+ }
+
+ .pageHead_login {
+  display: flex;
+  padding-bottom: 5px;
+ }
+ .PageHead_login_title {
+  background-color: #fff;
+  margin-top: 10px;
+  height: 98px;
+  width: 160px;
+  border-radius: 0 10px 10px 0;
+  text-align: center;
+ }
+ .PageHead_login_title h2 {
+  font-weight: 600;
+  font-family: 'Comic Sans MS';
+  line-height: 98px;
+ }
+ .PageHead_login_text {
+  position: relative;
+  bottom: 108px;
+  left: 162px;
+  background-color: #fff;
+  margin-top: 10px;
+  height: 98px;
+  width: 76.2%;
+  border-radius: 0 10px 10px 0;
+  text-align: center;
+ }
+
+ .login-display {
+  position: relative;
+  background-color: #fff;
+  bottom: 102px;
+  height: 685px;
+  width: 87%;
+ }
+
+ .login-display h1{
+  padding-top: 30px;
+  font-weight: 600;
+  font-family: 'Comic Sans MS';
+  line-height: 98px;
+  text-align: center;
+ }
+
+ .login-display h4{
+  font-weight: 100;
+  text-align: center;
+ }
+
+ .login-display_form {
+  padding-top: 40px;
+  padding-left: 280px;
+  color: #444444;
+ }
+
+ .login-button {
+  text-align: center;
+  padding-top: 5px;
+  padding-right: 340px;
+ }
+
+ .btn-secondary:hover {
+  background-color: #99CCCC;
+ }
+
+ //顧客側ログイン画面ここまで
+
+ //顧客側新規登録画面ここから
+ .breadcrumb-navigation_signup {
+  position: relative;
+  top: 48px;
+  left: 190px;
+ }
+
+ .breadcrumb-navigation_signup i {
+  margin-left: 10px;
+  }
+
+  .breadcrumb-navigation_signup span {
+  font-weight: 100;
+  margin: 0 8px;
+ }
+
+ .pageHead_signup {
+  display: flex;
+  padding-bottom: 5px;
+ }
+ .PageHead_signup_title {
+  background-color: #fff;
+  margin-top: 10px;
+  height: 98px;
+  width: 330px;
+  border-radius: 0 10px 10px 0;
+  text-align: center;
+ }
+ .PageHead_signup_title h2 {
+  font-weight: 600;
+  font-family: 'Comic Sans MS';
+  line-height: 98px;
+ }
+ .PageHead_signup_text {
+  position: relative;
+  bottom: 108px;
+  left: 332px;
+  background-color: #fff;
+  margin-top: 10px;
+  height: 98px;
+  width: 64.7%;
+  border-radius: 0 10px 10px 0;
+  text-align: center;
+ }
+
+ .signup-display {
+  position: relative;
+  background-color: #fff;
+  bottom: 102px;
+  height: 1215px;
+  width: 87%;
+ }
+
+ .signup-display h1{
+  padding-top: 30px;
+  font-weight: 600;
+  font-family: 'Comic Sans MS';
+  line-height: 98px;
+  text-align: center;
+ }
+ .signup-display h4{
+  font-weight: 100;
+  text-align: center;
+ }
+
+ .signup-display_text2 {
+  padding-top: 20px;
+  text-align: center;
+ }
+  .required_item {
+  color: #BB0000;
+ }
+
+ .signup-display_form {
+  padding-top: 40px;
+  padding-left: 280px;
+  color: #444444;
+ }
+
+ .signup-button {
+  text-align: center;
+  padding-top: 45px;
+  padding-right: 340px;
+ }
+ .signup-display_induction {
+  padding-top: 100px;
+  text-align:center;
+ }
+ .signup-display_induction-link {
+  text-decoration: none;
+  color: #000;
+ }
+  .signup-display_induction-link:hover {
+  text-decoration: none;
+  color: #bbbbbb;
+ }
+
+ //顧客側新規登録画面ここまで
+
+
+ //管理者ログイン画面ここから
+ .login-display_admin {
+  position: relative;
+  background-color: #fff;
+  bottom: 102px;
+  height: 685px;
+  width: 100%;
+ }
+  .login-display_admin-title {
+  padding-top: 30px;
+  font-weight: 600;
+  font-family: 'Comic Sans MS';
+  line-height: 98px;
+  text-align: center;
+  padding-right: 200px;
+ }
+ .login-display_admin-text {
+  position: relative;
+  bottom: 108px;
+  right: 60px;
+  background-color: #fff;
+  margin-top: 10px;
+  height: 98px;
+  border-radius: 0 10px 10px 0;
+  text-align: center;
+ }
+ //整体師新規登録ページここから
+ .signup_chiropractor-display {
+  position: relative;
+  background-color: #fff;
+  bottom: 102px;
+  height: 1375px;
+  width: 87%;
+ }
+ .signup_chiropractor-display_title {
+  padding-top: 30px;
+  font-weight: 600;
+  font-family: 'Comic Sans MS';
+  line-height: 98px;
+  text-align: center;
+ }
+ .signup_chiropractor-display_text {
+  font-weight: 100;
+  text-align: center;
+ }
+ //整体師新規登録ページここまで

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Mituchiro</title>
+    <title>Portfolio</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,45 @@
   </head>
 
   <body>
-    <%= yield %>
+      <header class="l-header">
+        <a href="/"><h1 class="header-logo"></h1></a>
+        <nav>
+          <ul class="nav-main">
+            <li><%= link_to "HOME", root_path, class:"nav-color ml-5" %></li>
+            <li><%= link_to "ABOUT", about_path, class:"nav-color ml-4" %></li>
+            <%#<li><%= link_to "ARTICLES", articles_path, class:"nav-color ml-4" %><%#</li>
+           <%# <li><%= link_to "CHIROPRACTORS", chiropractors_path, class:"nav-color ml-4" %> <%#</li>
+            <li><%= link_to "ADMINISTRATOR", new_admin_session_path, class:"nav-color ml-4" %><%# </li>%>
+            <% if user_signed_in? %>
+              <li><%= link_to "LOGOUT", destroy_user_session_path, method: :delete, class:"nav-color ml-4" %></li>
+            <% end %>
+            <% if chiropractor_signed_in? %>
+              <li><%= link_to "LOGOUT", destroy_chiropractor_session_path, method: :delete, class:"nav-color ml-4" %></li>
+            <% end %>
+          </ul>
+        </nav>
+        <div class="l-header_header-box">
+          <ul class="l-header_header-box">
+            <li class="registration">
+              <%= link_to "REGISTRATION", new_user_registration_path, {class: "header-box_color"} %>
+              <i class="fa fa-user-plus fa-lg header-box_icon"></i>
+            </li>
+            <li class="login">
+              <%= link_to "LOGIN", new_user_session_path, {class: "header-box_color"} %>
+              <i class="fa fa-lock fa-lg header-box_icon"></i>
+            </li>
+            <%#<% if user_signed_in? %>
+              <%#<li class="mypage">
+                <%= link_to "MYPAGE", user_user_path(current_user), {class: "header-box_color"} %>
+                <%#<i class="fa fa-user fa-lg header-box_icon"></i>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      </header>
+      <main>
+        <%= yield %>
+      </main>
   </body>
 </html>
+
