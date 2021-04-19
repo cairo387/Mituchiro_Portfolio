@@ -104,18 +104,21 @@
   width: 720px;
   height: 710px;
   position: relative;
-  top: 30px;
-  left: 65px;
+  margin-top: 30px;
+  margin-left: 65px;
  }
- .article-show_date {
-  position:relative;
-  top: 50px;
-  left: 40px;
+ .article-space {
+  width: 840px;
  }
  .article-show_title {
-  position:relative;
-  top: 60px;
-  left: 20px;
+  padding-top: 30px;
+  text-align: center;
+ }
+  .article-show_date {
+  padding-top: 5px;
+  text-align: right;
+  padding-right: 60px;
+  color: #BBBBBB;
  }
  .article-show_text {
   padding-top: 80px;

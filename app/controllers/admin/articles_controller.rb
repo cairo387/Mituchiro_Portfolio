@@ -5,7 +5,7 @@ class Admin::ArticlesController < ApplicationController
 
   def create
     @article = Article.new(article_params)
-    @article.admin_id = current_admin.id
+    @article.admin_id = 1
     @article.genre_id = 1
     if @article.save
       redirect_to articles_path
