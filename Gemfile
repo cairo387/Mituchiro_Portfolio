@@ -89,9 +89,3 @@ gem 'momentjs-rails', '>= 2.9.0'
 
 #予約機能+カレンダー機能実装用
 gem 'fullcalendar-rails'
-
-#環境変数用
-gem 'dotenv-rails'
-group :production do
-  gem 'mysql2'
-end
