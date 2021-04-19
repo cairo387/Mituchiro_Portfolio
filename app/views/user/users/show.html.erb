@@ -1,0 +1,21 @@
+<div class="breadcrumb-navigation">
+  <i class="fa fa-angle-right">&nbsp;</i>
+  <span>USER<span>
+  <i class="fa fa-angle-right">&nbsp;</i>
+  <span>MYPAGE<span>
+
+<div class="PageHead_user">
+  <div class="PageHead_user-title">
+    <h2>MYPAGE</h2>
+  </div>
+  <div class="PageHead_user-text">
+    <h2><%= @user.name %>様のマイページです。</h2>
+  </div>
+</div>
+
+<div class="mypage-display">
+  <h1 class="mypage-display_title">MYPAGE</h1>
+  <%= attachment_image_tag(@user, :image, width:"180px", format: 'jpeg', fallback: "no-image.png",class: "user_image") %>
+  <h3 class="user_name"><%= @user.name %></h3>
+  <%= link_to "プロフィールを編集する", edit_user_user_path(@user), class: "btn btn-secondary col-sm-2 btn_user_edit" %>
+</div>

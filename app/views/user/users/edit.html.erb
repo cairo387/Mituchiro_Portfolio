@@ -1,0 +1,64 @@
+<div class="breadcrumb-navigation">
+  <i class="fa fa-angle-right">&nbsp;</i>
+  <span>USER<span>
+  <i class="fa fa-angle-right">&nbsp;</i>
+  <span>EDIT<span>
+
+<div class="PageHead_practator">
+  <div class="PageHead_practator-title">
+    <h2>USER</h2>
+  </div>
+  <div class="PageHead_practator-text">
+    <h2>詳細ページ</h2>
+  </div>
+</div>
+
+<div class="user_edit-display">
+  <h1 class="user_edit-display_title">EDIT</h1>
+  <h4 class="user_edit-display_text">
+    必要情報の更新を行います。<br><br>
+    以下の項目を入力していただき、「編集完了」ボタンを押してください。
+  </h4>
+  <%= form_with model:@user, url: user_user_path(@user), local:true do |f| %>
+    <div class="user_edit-display_form">
+      <div class="form-group form-inline">
+        <%= f.label :nickname, 'ニックネーム', class:"col-sm-2 control-label font-weight-lighter small" %>
+        <%= f.text_field :nickname, autofocus: true, autocomplete: "nickname", placeholder: "", class:"form-control col-sm-4" %>
+      </div>
+
+      <div class="form-group form-inline mt-4">
+        <%= f.label :name, 'お名前（姓・名）', class:"col-sm-2 control-label font-weight-lighter small" %>
+        <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "氏名（姓・名）", class:"form-control col-sm-4" %>
+      </div>
+
+      <div class="form-group form-inline mt-4">
+        <%= f.label :image, 'プロフィール画像', class:"col-sm-2 control-label font-weight-lighter small" %>
+        <%= f.attachment_field :image, class:"col-sm-4" %>
+      </div>
+
+      <div class="form-group form-inline mt-4">
+        <%= f.label :postal_code, '郵便番号', class:"col-sm-2 control-label font-weight-lighter small" %>
+        <%= f.text_field :postal_code, autofocus: true, autocomplete: "postal_code", placeholder: "0000000", class:"form-control col-sm-2" %>
+      </div>
+
+      <div class="form-group form-inline mt-4">
+        <div class="col-sm-2"></div>
+        <%= f.text_field :address_city, autofocus: true, autocomplete: "address_city", placeholder: "市区町村名", class:"form-control col-sm-4" %>
+      </div>
+
+      <div class="form-group form-inline mt-4">
+        <div class="col-sm-2"></div>
+        <%= f.text_field :address_street, autofocus: true, autocomplete: ":address_street", placeholder: "番地・ビル名", class:"form-control col-sm-4" %>
+      </div>
+
+      <div class="form-group form-inline mt-4">
+        <%= f.label :phone_number, '電話番号', class:"col-sm-2 control-label font-weight-lighter small" %>
+        <%= f.text_field :postal_code, autofocus: true, autocomplete: "postal_code", placeholder: "00000000000", class:"form-control col-sm-4" %>
+      </div>
+
+      <div class="signup-button">
+        <%= f.submit "編集完了", class:"btn btn-secondary col-sm-6" %>
+      </div>
+     </div>
+    <% end %>
+</div>
