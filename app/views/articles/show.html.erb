@@ -1,0 +1,25 @@
+<div class="breadcrumb-navigation">
+  <i class="fa fa-angle-right">&nbsp;</i>
+  <span>HOME<span>
+  <i class="fa fa-angle-right">&nbsp;</i>
+  <span>ARTICELS<span>
+  <i class="fa fa-angle-right">&nbsp;</i>
+  <span>INDEX<span>
+  <i class="fa fa-angle-right">&nbsp;</i>
+  <span>SHOW<span>
+
+<div class="PageHead-article">
+  <div class="PageHead-article_title">
+    <h2>ARTICLES</h2>
+  </div>
+  <div class="PageHead-article_text">
+    <h2>投稿された記事の詳細ページです。</h2>
+  </div>
+
+<div class="article_show-display">
+  <%= attachment_image_tag( @article, :image, width:"110px", format: 'jpeg',class: "article-show_image") %>
+  <h6 class="article-show_date"><%= @article.created_at.strftime('%Y/%m/%d') %></h6>
+  <h2 class="article-show_title"><%= @article.title %><h2>
+  <h6 class="article-show_text"><%= markdown(@article.body).html_safe %></h6>
+  <%= link_to"編集する", edit_admin_article_path(@article), class:"btn btn-secondary article_button" %>
+</div>

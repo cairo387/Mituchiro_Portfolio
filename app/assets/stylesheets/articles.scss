@@ -1,0 +1,128 @@
+// Place all the styles related to the articles controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+//index画面ここから
+//パンくずリスト
+ .breadcrumb-navigation {
+  position: relative;
+  top: 48px;
+  left: 190px;
+ }
+  .breadcrumb-navigation i {
+  margin-left: 10px;
+  }
+  .breadcrumb-navigation span {
+  font-weight: 100;
+  margin: 0 8px;
+ }
+ .pageHead-article {
+  display: flex;
+  padding-bottom: 5px;
+ }
+ .PageHead-article_title {
+  background-color: #fff;
+  margin-top: 10px;
+  height: 98px;
+  width: 180px;
+  border-radius: 0 10px 10px 0;
+  text-align: center;
+ }
+ .PageHead-article_title h2 {
+  font-weight: 600;
+  font-family: 'Comic Sans MS';
+  line-height: 98px;
+ }
+
+ .PageHead-article_text {
+  position: relative;
+  bottom: 108px;
+  left: 182px;
+  background-color: #fff;
+  margin-top: 10px;
+  height: 98px;
+  width: 75%;
+  border-radius: 0 10px 10px 0;
+  text-align: center;
+ }
+ .article-display {
+  position: relative;
+  bottom: 134px;
+  background-color: #fff;
+  width: 86.8%;
+  height: 100%;
+  padding-bottom: 100px;
+ }
+ .article-box {
+  position:relative;
+  top: 15px;
+  left: 15px;
+  height: 197px;
+  width: 803px;
+  padding: 0.5em 1em;
+  margin: 2em 0;
+  font-weight: bold;
+  border: solid 3px #555555	;
+ }
+
+ .article-box_date {
+  position:relative;
+  top: 15px;
+  left: 225px;
+  color: #555555;
+ }
+ .article-box_title {
+  position:relative;
+  top: 30px;
+  left: 210px;
+  color: #555555;
+ }
+ .article-box_image {
+  width: 180px;
+  height: 180px;
+  position:relative;
+  bottom: 65px;
+  right: 10px;
+ }
+ .article-box_text {
+  position:relative;
+  bottom: 145px;
+  left: 225px;
+  color: #555555;
+ }
+ //index画面ここまで
+
+ //show画面ここから
+ .article_show-display {
+  position: relative;
+  bottom: 102px;
+  background-color: #fff;
+  width: 86.8%;
+  height: 2000px;
+ }
+ .article-show_image {
+  width: 720px;
+  height: 710px;
+  position: relative;
+  top: 30px;
+  left: 65px;
+ }
+ .article-show_date {
+  position:relative;
+  top: 50px;
+  left: 40px;
+ }
+ .article-show_title {
+  position:relative;
+  top: 60px;
+  left: 20px;
+ }
+ .article-show_text {
+  padding-top: 80px;
+  margin-left: 50px;
+ }
+ .article_button {
+  position:relative;
+  bottom: 10px;
+  left: 730px;
+ }
+ //show画面ここまで
