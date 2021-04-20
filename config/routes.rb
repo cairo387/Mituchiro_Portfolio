@@ -26,7 +26,10 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :articles, only: [:new, :create, :edit, :update, :destroy]
+    resources :genres, only: [:new, :create, :edit, :update]
+    resources :treatments, only: [:new, :create, :edit, :update]
   end
+
   namespace :user do
     resources :users, only: [:show, :edit, :update]
   end
