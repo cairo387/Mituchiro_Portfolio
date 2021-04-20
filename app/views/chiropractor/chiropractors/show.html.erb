@@ -1,0 +1,58 @@
+<div class="breadcrumb-navigation">
+  <i class="fa fa-angle-right">&nbsp;</i>
+  <span>HOME<span>
+  <i class="fa fa-angle-right">&nbsp;</i>
+  <span>CHIROPRACTORS<span>
+  <i class="fa fa-angle-right">&nbsp;</i>
+  <span>SHOW<span>
+
+<div class="PageHead_practator">
+  <div class="PageHead_practator-title">
+    <h2>CHIROPRACTORS</h2>
+  </div>
+  <div class="PageHead_practator-text">
+    <h2><%=@chiropractor.nickname%>の詳細ページ</h2>
+  </div>
+</div>
+
+<div class="chiropractor_show-display">
+  <div class="chiropractor_profile">
+    <h2 class="chiropractor_profile-name"><%= @chiropractor.nickname %></h2>
+    <%#ここからいいね機能%>
+    <% if user_signed_in? %>
+      <% if current_user.favorited_by?(@chiropractor.id) %>
+        <%= link_to chiropractor_favorites_path(@chiropractor), method: :delete, local: true do %>
+          <p class="text-danger favorites">
+            <i class="fa fa-lg fa-heart" aria-hidden="true"></i>
+          </p>
+        <% end %>
+      <% else %>
+        <%= link_to chiropractor_favorites_path(@chiropractor), method: :post, local: true do %>
+          <p class="text-secondary favorites">
+            <i class="fa fa-lg fa-heart" aria-hidden="true"></i>
+          </p>
+        <% end %>
+      <% end %>
+    <% end %>
+    <%#ここまでいいね機能%>
+    <%= attachment_image_tag(@chiropractor, :image, width:"90px", format: 'jpeg', fallback: "no-image.png",class: "chiropractor_image") %>
+    <%= link_to "EDIT", edit_chiropractor_chiropractor_path(@chiropractor), class: "btn btn-secondary col-sm-6 btn_edit" %>
+    <h2 class="performance">📄Performance</h2>
+    <h2 class="price">💰Price</h2>
+    <h4 class="fee">🚃Fare　　　 &nbsp;¥<%=@chiropractor.fare.to_s(:delimited) %></h4><br>
+    <h4 class="fee">Service Charge¥<%=@chiropractor.service_charge.to_s(:delimited) %></h4>
+    <h2 class="profile">👤Profile</h2>
+    <h4 class="profile_text">Age　　<%= @chiropractor.age %>歳</h4><br>
+    <h4 class="profile_text">Sex
+      <% if @chiropractor.sex == "male" %>
+        male
+      <% elsif @chiropractor.sex == "female" %>
+        female
+      <% end %>
+    </h4>
+    <h2 class="method">Method</h2>
+  </div>
+  <div class="chiropractor_carender">
+    <div id="calendar"></div>
+  </div>
+</div>

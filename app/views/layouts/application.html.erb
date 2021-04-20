@@ -37,10 +37,10 @@
               <%= link_to "LOGIN", new_user_session_path, {class: "header-box_color"} %>
               <i class="fa fa-lock fa-lg header-box_icon"></i>
             </li>
-            <%#<% if user_signed_in? %>
-              <%#<li class="mypage">
+            <% if user_signed_in? %>
+              <li class="mypage">
                 <%= link_to "MYPAGE", user_user_path(current_user), {class: "header-box_color"} %>
-                <%#<i class="fa fa-user fa-lg header-box_icon"></i>
+                <i class="fa fa-user fa-lg header-box_icon"></i>
               </li>
             <% end %>
           </ul>

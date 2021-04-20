@@ -1,0 +1,156 @@
+// Place all the styles related to the Chiropractor::chiropractors controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+//整体師の詳細画面ここから
+ .breadcrumb-navigation {
+  position: relative;
+  top: 48px;
+  left: 190px;
+ }
+
+ .breadcrumb-navigation i {
+  margin-left: 10px;
+  }
+
+  .breadcrumb-navigation span {
+  font-weight: 100;
+  margin: 0 8px;
+ }
+
+ .pageHead_practator {
+  display: flex;
+  padding-bottom: 5px;
+ }
+ .PageHead_practator-title {
+  background-color: #fff;
+  margin-top: 10px;
+  height: 98px;
+  width: 330px;
+  border-radius: 0 10px 10px 0;
+  text-align: center;
+ }
+ .PageHead_practator-title h2 {
+  font-weight: 600;
+  font-family: 'Comic Sans MS';
+  line-height: 98px;
+ }
+ .PageHead_practator-text {
+  position: relative;
+  bottom: 108px;
+  left: 332px;
+  background-color: #fff;
+  margin-top: 10px;
+  height: 98px;
+  width: 100%;
+  border-radius: 0 10px 10px 0;
+  text-align: center;
+ }
+ .chiropractor_show-display {
+  position: relative;
+  background-color: #fff;
+  bottom: 134px;
+  height: 100%;
+  width: 87%;
+  padding-bottom: 100px;
+ }
+ .chiropractor_profile {
+    position:relative;
+    top: 15px;
+    left: 15px;
+    height: 1185px;
+    width: 315px;
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    border: double 5px #99CCCC;
+ }
+ .chiropractor_profile-name {
+  position:relative;
+  top: 80px;
+  left: 140px;
+}
+ .favorites {
+  position:relative;
+  top: 45px;
+  left: 210px;
+ }
+ .chiropractor_image {
+  position:relative;
+  bottom: 25px;
+  left: 20px;
+  border-radius: 50%;
+ }
+  .btn_edit {
+  position:relative;
+  top: 70px;
+  right: 25px;
+ }
+ .performance {
+  position:relative;
+  top: 65px;
+  left: 25px;
+  text-decoration:underline;
+ }
+ .price {
+  position:relative;
+  top: 165px;
+  left: 80px;
+  text-decoration:underline;
+ }
+ .fee {
+  position:relative;
+  top: 200px;
+  left: 25px;
+ }
+  .profile {
+  position:relative;
+  top: 240px;
+  left: 65px;
+  text-decoration:underline;
+ }
+ .profile_text {
+  position:relative;
+  top: 280px;
+  left: 60px;
+ }
+ .method {
+  position:relative;
+  top: 320px;
+  left: 75px;
+  text-decoration:underline;
+ }
+ .chiropractor_carender {
+ width: 50%;
+ position: relative;
+ bottom: 600px;
+ left: 500px;
+ }
+
+//整体師詳細画面ここまで
+
+//整体師編集画面ここから
+ .chiropractor_edit-display {
+  position: relative;
+  background-color: #fff;
+  bottom: 102px;
+  height: 100%;
+  width: 87%;
+  padding-bottom: 100px;
+ }
+ .chiropractor_edit-display_title {
+  padding-top: 30px;
+  font-weight: 600;
+  font-family: 'Comic Sans MS';
+  line-height: 98px;
+  text-align: center;
+  padding-right: 200px;
+ }
+  .chiropractor_edit-display_text {
+  text-align: center;
+  padding-right: 190px;
+ }
+ .chiropractor_edit-display_form {
+  padding-top: 40px;
+  padding-left: 280px;
+  color: #444444;
+ }
+//整体師編集画面ここまで

@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root to: 'homes#top'
   get '/about' => 'homes#about'
   resources :articles, only: [:index, :show]
-   resources :chiropractors, only: [:index] do
+  resources :chiropractors, only: [:index] do
     resource :favorites, only: [:create, :destroy]
     resource :reviews, only: [:create, :destroy]
   end
@@ -17,7 +17,6 @@ Rails.application.routes.draw do
   sessions: 'users/sessions',
   passwords: 'users/passwords',
   registrations: 'users/registrations'
-
   }
 
   devise_for :admins, controllers: {
@@ -28,6 +27,10 @@ Rails.application.routes.draw do
     resources :articles, only: [:new, :create, :edit, :update, :destroy]
     resources :genres, only: [:new, :create, :edit, :update]
     resources :treatments, only: [:new, :create, :edit, :update]
+  end
+
+  namespace :chiropractor do
+    resources :chiropractors, only: [:show, :edit, :update]
   end
 
   namespace :user do
