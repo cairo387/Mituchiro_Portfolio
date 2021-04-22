@@ -1,0 +1,69 @@
+<div class="breadcrumb-navigation">
+  <i class="fa fa-angle-right">&nbsp;</i>
+  <span>HOME<span>
+  <i class="fa fa-angle-right">&nbsp;</i>
+  <span>CHIROPRACTORS<span>
+  <i class="fa fa-angle-right">&nbsp;</i>
+  <span>SHOW<span>
+  <i class="fa fa-angle-right">&nbsp;</i>
+  <span>RESERVATION<span>
+
+<div class="PageHead_practator">
+  <div class="PageHead_practator-title">
+    <h2>RESERVATION</h2>
+  </div>
+  <div class="PageHead_practator-text">
+    予約画面
+  </div>
+</div>
+
+<div class="signup-display">
+  <h6>
+    ご予約日時<%= @reservation.start_date.strftime("%Y年%m月%d日#{@wd[@reservation.start_date.wday]} %H:%M") %>
+  </h6>
+  <h1 class="article-display_title">RESERVATION</h1>
+  <h4 class="signup_chiropractor-display_text">
+    お客様情報の入力画面です。<br>
+    以下の項目をご入力いただき、「予約確認画面へ進む」ボタンを押してください。<br>
+  </h4>
+  <div class="col-md-4 mx-auto">
+  <table class="table table-bordered mb-4">
+    <tr>
+      <td class="table-active">ご予約日時</td>
+      <td><%= @reservation.start_date.strftime("%Y年%m月%d日#{@wd[@reservation.start_date.wday]} %H:%M") %></td>
+    </tr>
+  </table>
+  </div>
+  <%= form_with model:@reservation, local:true do |f| %>
+    <div class="reservation-display_form">
+      <div class="form-group form-inline mt-4">
+        <%= f.label :name, 'ご予約者氏名', class:"col-sm-2 control-label font-weight-lighter small" %>
+        <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "佐藤太郎", class:"form-control col-sm-4" %>
+      </div>
+
+      <div class="form-group form-inline mt-4">
+        <%= f.label :postal_code, 'ご自宅の郵便番号', class:"col-sm-2 control-label font-weight-lighter small" %>
+        <%= f.text_field :postal_code, autofocus: true, autocomplete: "postal_code", placeholder: "0000000", class:"form-control col-sm-2" %>
+      </div>
+
+      <div class="form-group form-inline mt-4">
+        <%= f.label :address, 'ご自宅の住所', class:"col-sm-2 control-label font-weight-lighter small" %>
+        <%= f.text_field :address, autofocus: true, autocomplete: "address", placeholder: "東京都新宿区西新宿２丁目８−１", class:"form-control col-sm-4" %>
+      </div>
+
+      <div class="form-group form-inline mt-4">
+        <%= f.label :station, '最寄り駅', class:"col-sm-2 control-label font-weight-lighter small" %>
+        <%= f.text_field :station, autofocus: true, autocomplete: "station", placeholder: "東京駅", class:"form-control col-sm-4" %>
+      </div>
+
+      <div class="form-group form-inline mt-4">
+        <%= f.label :phone_number, 'ご連絡可能な電話番号', class:"col-sm-2 control-label font-weight-lighter small" %>
+        <%= f.text_field :postal_code, autofocus: true, autocomplete: "postal_code", placeholder: "00000000000", class:"form-control col-sm-4" %>
+      </div>
+
+      <div class="signup-button">
+        <%= f.submit "予約確認画面へ進む", class:"btn btn-secondary col-sm-6" %>
+      </div>
+    </div>
+  <% end %>
+</div>

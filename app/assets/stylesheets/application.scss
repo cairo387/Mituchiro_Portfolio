@@ -360,3 +360,46 @@
   text-align: center;
  }
  //整体師新規登録ページここまで
+
+ //fullcalenderレイアウト用ここから
+.fc-sun { color: red; }  /* 日曜日 */
+.fc-sat { color: blue; } /* 土曜日 */
+
+.fc {
+ padding: 40px;
+ border: 3px solid #bbb!important;
+}
+
+.fc-header-toolbar{
+ padding-top:10px;
+ margin-bottom: 6px!important;
+}
+.fc-day-grid-event .fc-content{/*--ver 3.9.0 word wrap------*/
+ white-space: normal!important;
+ word-wrap:break-word!important;
+}
+.fc th,
+.fc td {
+ border-width: 1.5px!important;
+ border-color: #bbb!important;
+}
+.fc-time-grid-event {
+ margin-top: 2px!important;
+ height: 10px!important;
+ width: 50px!important;
+}
+.fc-content .fc-time {
+ display: none!important;
+}
+.fc-time {
+ text-align: center!important;
+}
+.fc-event {
+ text-align: center!important;
+ display: grid!important;
+ place-items: center!important;
+ font-size: 1.75em!important;
+}
+.fc-event:hover {
+ background-color: #FFDDFF!important;
+}

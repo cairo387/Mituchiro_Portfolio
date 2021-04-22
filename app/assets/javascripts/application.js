@@ -23,26 +23,104 @@
 //= require_tree .
 
 $(function () {
-    // 画面遷移を検知
-    $(document).on('turbolinks:load', function () {
-        // lengthを呼び出すことで、#calendarが存在していた場合はtrueの処理がされ、無い場合はnillを返す
-        if ($('#calendar').length) {
-            function eventCalendar() {
-                return $('#calendar').fullCalendar({
-                });
-            };
-            function clearCalendar() {
-                $('#calendar').html('');
-            };
+  // 画面遷移を検知
+  $(document).on('turbolinks:load', function () {
+    if ($('#calendar').length) {
 
-            $(document).on('turbolinks:load', function () {
-                eventCalendar();
-            });
-            $(document).on('turbolinks:before-cache', clearCalendar);
+      function Calendar() {
+        return $('#calendar').fullCalendar({
+        });
+      }
+      function clearCalendar() {
+        $('#calendar').html('');
+      }
 
-            $('#calendar').fullCalendar({
-                events: '/events.json'
-            });
+      $(document).on('turbolinks:load', function () {
+        Calendar();
+      });
+      $(document).on('turbolinks:before-cache', clearCalendar);
+
+      //events: '/events.json', 以下に追加
+      $('#calendar').fullCalendar({
+        events: '/events.json',
+        //カレンダー上部を年月で表示させる
+        titleFormat: 'YYYY年 M月',
+        // 月名称
+        monthNames: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'],
+        // 月名称
+        monthNamesShort: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'],
+        dayNames: ['日', '月', '火', '水', '木', '金', '土'],
+        //曜日を日本語表示
+        dayNamesShort: ['(日)', '(月)', '(火)', '(水)', '(木)', '(金)', '(土)'],
+        // スロットの時間の書式
+        slotLabelFormat: 'H:mm',
+        // 時間の書式
+        timeFormat: 'H:mm',
+
+        views: {
+        month: {
+        columnFormat: 'dddd' //like '土'
+        },
+        week: {
+        columnFormat: 'DD\n　ddd' //like '6/6(土)'
+        },
+        day: {
+        columnFormat: 'M/D ddd' // like '6/6(土)'
         }
-    });
+        },
+        //ボタンのレイアウト
+        header: {
+          left: 'prev',
+          center: 'title',
+          right: 'next'
+        },
+        //カレンダー始まりの日を今日に指定
+        firstDay: 'today',
+        //土日入る
+        weekends: true,
+        // 週モード (fixed, liquid, variable)
+        weekMode: 'fixed',
+        // 終日スロットを非表示
+        allDaySlot: false,
+        // スロットの分
+        slotMinutes: 30,
+        // 選択する時間間隔
+        snapMinutes: 30,
+        //予約開始時間の指定
+        minTime:'09:00:00',
+        //予約終了時間の指定
+        maxTime:'22:00:00',
+        //デフォルトのカレンダーを週間カレンダーに
+        defaultView: 'agendaWeek',
+        //終了時刻がないイベントの表示間隔
+        defaultTimedEventDuration: '03:00:00',
+        buttonText: {
+          today: '本日',
+          month: '月',
+          week: '週',
+          day: '日',
+          prev: '◂前の一週間',
+          next: '次の一週間▸'
+        },
+        // Drag & Drop & Resize
+        editable: false,
+        selectable: true,
+        //イベントの色を変える
+        eventColor: '#fff',
+        //イベントの文字色を変える
+        eventTextColor: '#CC0000',
+        eventRender: function (event, element) {
+          element.css("font-size", "0.8em");
+          element.css("padding", "5px");
+        },
+        eventClick: function(item, jsEvent, view) {
+          if(item.title == '◎'){
+            //遷移先（予約フォーム）に情報を送る
+            location.href = `/reservations/new?start=${item.start}&end=${item.end}`
+          }
+        }
+      });
+    }
+  });
 });
+

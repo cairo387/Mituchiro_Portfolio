@@ -6,6 +6,9 @@ Rails.application.routes.draw do
     resource :favorites, only: [:create, :destroy]
     resource :reviews, only: [:create, :destroy]
   end
+  resources :events, only: [:index, :new]
+  resources :reservations, only: [:new, :create]
+  post '/reservations/confirm' => 'reservations#confirm'
 
   devise_for :chiropractors, controllers: {
   sessions: 'chiropractors/sessions',
@@ -25,8 +28,8 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :articles, only: [:new, :create, :edit, :update, :destroy]
-    resources :genres, only: [:new, :create, :edit, :update]
-    resources :treatments, only: [:new, :create, :edit, :update]
+    resources :genres, only: [:index, :create, :edit, :update, :destroy]
+    resources :treatments, only: [:index, :create, :edit, :update, :destroy]
   end
 
   namespace :chiropractor do
