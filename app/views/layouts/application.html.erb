@@ -19,12 +19,15 @@
             <li><%= link_to "ARTICLES", articles_path, class:"nav-color ml-4" %></li>
             <li><%= link_to "CHIROPRACTORS", chiropractors_path, class:"nav-color ml-4" %></li>
             <li><%= link_to "ADMINISTRATOR", new_admin_session_path, class:"nav-color ml-4" %></li>
-            <li><%= link_to "EVENT", new_event_path, class:"nav-color ml-4" %></li>
+            <%# 使わない　<li><%= link_to "EVENT", new_event_path, class:"nav-color ml-4" %><%#</li>%>
             <% if user_signed_in? %>
               <li><%= link_to "LOGOUT", destroy_user_session_path, method: :delete, class:"nav-color ml-4" %></li>
             <% end %>
             <% if chiropractor_signed_in? %>
               <li><%= link_to "LOGOUT", destroy_chiropractor_session_path, method: :delete, class:"nav-color ml-4" %></li>
+            <% end %>
+            <% if admin_signed_in? %>
+              <li><%= link_to "LOGOUT", destroy_admin_session_path, method: :delete, class:"nav-color ml-4" %></li>
             <% end %>
           </ul>
         </nav>
@@ -47,6 +50,13 @@
           </ul>
         </div>
         <div class="sidebar">
+          <p class="sidebar_links"><i class="fa fa-angle-right">&nbsp;</i><%= link_to "Article -read articles-", articles_path, class:"sidebar_links_text" %></p>
+          <p class="sidebar_links"><i class="fa fa-angle-right">&nbsp;</i><%= link_to "Chiropractor -suitable for you-", articles_path, class:"sidebar_links_text" %></p>
+          <% if admin_signed_in? %>
+            <p class="sidebar_links"><i class="fa fa-angle-right">&nbsp;</i><%= link_to "Article -post an article-", new_admin_article_path, class:"sidebar_links_text" %></p>
+            <p class="sidebar_links"><i class="fa fa-angle-right">&nbsp;</i><%= link_to "Genre -add & edit a genre-", admin_genres_path, class:"sidebar_links_text" %></p>
+            <p class="sidebar_links"><i class="fa fa-angle-right">&nbsp;</i><%= link_to "Treatment -add & edit a treatment-", admin_treatments_path, class:"sidebar_links_text" %></p>
+          <% end %>
         </div>
       </header>
       <main>

@@ -65,6 +65,7 @@
  .nav-color {
   color: #000;
  }
+ //簡易アクセスのためのサイドバー設置
  .sidebar {
   position:relative;
   top: 100px;
@@ -73,21 +74,24 @@
   width: 180px;
   height: 515px;
  }
- //メインボタンの変更
- .btn-secondary {
-  border-radius: 0;
+ .sidebar_links {
+  padding-left: 20px;
+  padding-top: 10px;
  }
-  .btn-secondary:hover {
-  background-color: #99CCCC;
+ .sidebar_links_text {
+  color: #000;
  }
-
+ //ホバーしたときの色を指定
+ .sidebar_links_text:hover {
+  color: #b5b5b5;
+  text-decoration-line: underline;
+ }
  //ヘッダーホバーしたときの色を指定
  .nav-color:hover {
   color: #bbbbbb;
   text-decoration: none;
  }
-
- //新規登録、ログイン、マイページ用の四角
+ //新規登録、ログイン、マイページ用の四角い箱
  .l-header_header-box {
   display: flex;
   margin: 0 5px 0 auto;
@@ -102,7 +106,6 @@
   width: 100px;
   position: relative;
  }
-
  .l-header_header-box li:hover {
   background: #99CCCC;
  }
@@ -115,7 +118,6 @@
    position: relative;
    z-index: 1;
  }
-
  .header-box_color:hover {
    color: #fff;
    text-decoration: none;
@@ -126,7 +128,16 @@
    position: relative;
    bottom: 25px;
  }
-
+ .article_links:hover {
+  text-decoration: none;
+ }
+ //メインボタンの変更
+ .btn-secondary {
+  border-radius: 0;
+ }
+  .btn-secondary:hover {
+  background-color: #99CCCC;
+ }
  //顧客側ログイン画面ここから
  .breadcrumb-navigation_login {
   position: relative;

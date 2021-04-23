@@ -46,7 +46,7 @@
  }
   .article-index-display {
   position: relative;
-  bottom: 135px;
+  bottom: 118px;
   background-color: #fff;
   width: 86.8%;
   height: 100%;
@@ -67,9 +67,13 @@
   height: 197px;
   width: 803px;
   padding: 0.5em 1em;
-  margin: 2em 0;
-  font-weight: bold;
-  border: solid 3px #555555	;
+  margin: 1em 0;
+  border: 1px solid #eaebed;
+  box-shadow: 2px 2px 6px 0px rgba(0,0,0,0.2);
+ }
+
+ .article-box:hover {
+  background-color: #badede;
  }
 
  .article-box_date {
@@ -119,18 +123,44 @@
   width: 840px;
  }
  .article-show_title {
+  position: relative;
   padding-top: 30px;
-  text-align: center;
+  margin-left: 65px;
+  padding-left: 25px;
+ }
+ .article-show_title:before {
+  position: absolute;
+  content: '';
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 0;
+  border: none;
+  border-left: solid 15px transparent;
+  border-bottom: solid 15px #858585;
+ }
+ .article-show_title:after {
+  position: absolute;
+  content: '';
+  bottom: -3px;
+  left: 10px;
+  width: 100%;
+  border-bottom: solid 3px #858585;
  }
   .article-show_date {
-  padding-top: 5px;
+  padding-top: 15px;
   text-align: right;
-  padding-right: 60px;
   color: #BBBBBB;
  }
+ .article-body-box {
+  position:relative;
+  left: 65px;
+  height: 100%;
+  width: 785px;
+  background-color: #f5f5f5;
+ }
  .article-show_text {
-  padding-top: 80px;
-  margin-left: 50px;
+  margin-left: 65px;
  }
  .article_button {
   position:relative;

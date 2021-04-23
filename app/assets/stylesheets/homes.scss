@@ -8,27 +8,33 @@
   top: 50px;
   left: 195px;
 }
-
-.top-image {
-  background: image-url("top-image.png") no-repeat;
-  background-size: contain;
+#box{
   height: 683px;
   width: 1024px;
 }
-
+.top-image {
+  background: image-url("top-image.png") no-repeat;
+  background-size: contain;
+}
+.top-image2 {
+  background: image-url("top-image5.jpg") no-repeat;
+  background-size: contain;
+}
+.top-image3 {
+  background: image-url("top-image6.png") no-repeat;
+  background-size: contain;
+}
 .top-message {
   width: 1024px;
   height: 151px;
   background-color: #fff;
  }
-
  .top-message h2 {
   text-align: center;
   padding-top: 30px;
   font-size: 24px;
   color: #555555;
  }
-
  .top-message-buttton {
   text-align: center;
   padding-top: 15px;
@@ -59,7 +65,7 @@
  .top-articles-box_title {
   width: 150px;
   position: relative;
-  bottom: 85px;
+  bottom: 90px;
   left: 80px;
   color: #555555;
  }
@@ -83,12 +89,9 @@
   font-size: 20px;
   padding-top: 90px;
  }
-
-
 //Top画面ここまで
 
 //About画面ここから
-
 //パンくずリスト
  .breadcrumb-navigation {
   position: relative;
@@ -119,7 +122,6 @@
   font-family: 'Comic Sans MS';
   line-height: 98px;
  }
-
  .PageHead_text {
   position: relative;
   bottom: 108px;
@@ -131,7 +133,6 @@
   border-radius: 0 10px 10px 0;
   text-align: center;
  }
-
  .main-page {
   position: relative;
   bottom: 103px;
@@ -140,7 +141,6 @@
   height: 100%;
   padding-bottom: 100px;
  }
-
  .main-title h1{
   padding-top: 30px;
   font-weight: 600;
@@ -157,7 +157,6 @@
   margin : 0 auto;
   right: 50px;
  }
-
  .main-page_text {
   position: relative;
   bottom: 74px;

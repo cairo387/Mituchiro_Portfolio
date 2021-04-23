@@ -15,12 +15,14 @@
   </div>
 
 <div class="article_show-display">
-  <%= attachment_image_tag( @article, :image, width:"110px", format: 'jpeg',class: "article-show_image") %>
+  <%= attachment_image_tag( @article, :image, width:"110px", format: 'jpeg', class: "article-show_image") %>
   <div class="article-space">
     <h2 class="article-show_title"><%= @article.title %><h2>
     <h6 class="article-show_date"><i class="fa fa-clock "></i>&nbsp;&nbsp;<%= @article.created_at.strftime('%Y/%m/%d') %>
     &nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-history "></i>&nbsp;&nbsp;<%= @article.updated_at.strftime('%Y/%m/%d') %></h6>
-    <h6 class="article-show_text"><%= markdown(@article.body).html_safe %></h6>
+    <div class="article-body-box">
+      <h6 class="article-show_text"><%= markdown(@article.body).html_safe %></h6>
+    </div>
   </div>
   <%= link_to"編集する", edit_admin_article_path(@article), class:"btn btn-secondary article_button" %>
 </div>

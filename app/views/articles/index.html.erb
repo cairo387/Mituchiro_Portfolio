@@ -15,9 +15,9 @@
 <div class="article-index-display">
   <% @articles.each do |article| %>
     <div class="article-box">
-      <%= link_to(article_path(article)) do %>
+      <%= link_to(article_path(article), class: "article_links") do %>
         <h6 class="article-box_date"><%= article.created_at.strftime('%Y/%m/%d') %></h6>
-        <h4 class="article-box_title"><%= article.title %><h4>
+        <h4 class="article-box_title"><%= article.title.truncate(18) %><h4>
         <%= attachment_image_tag(article, :image, format: 'jpeg', fallback: "no-image.png" ,class: "article-box_image") %>
         <h6 class="article-box_text"><%= article.body.truncate(20) %></h6>
       <% end %>
