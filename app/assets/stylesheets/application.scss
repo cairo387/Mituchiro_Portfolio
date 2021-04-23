@@ -22,6 +22,7 @@
  //画面全体の色を指定
  body {
   background: rgb(218, 220, 222);
+  font-family: '游明朝';
  }
 
  ol, ul {
@@ -49,11 +50,11 @@
   background: image-url("logo.png") no-repeat;
   background-size: contain;
   height: 180px;
+  width: 180px;
+  top: 0;
   left: 5px;
   padding: 20px 35px 35px;
   position: absolute;
-  top: 0;
-  width: 180px;
   display: inline-block;
  }
 
@@ -63,6 +64,21 @@
 
  .nav-color {
   color: #000;
+ }
+ .sidebar {
+  position:relative;
+  top: 100px;
+  right: 215px;
+  background-color: #fff;
+  width: 180px;
+  height: 515px;
+ }
+ //メインボタンの変更
+ .btn-secondary {
+  border-radius: 0;
+ }
+  .btn-secondary:hover {
+  background-color: #99CCCC;
  }
 
  //ヘッダーホバーしたときの色を指定
@@ -188,10 +204,6 @@
   text-align: center;
   padding-top: 5px;
   padding-right: 340px;
- }
-
- .btn-secondary:hover {
-  background-color: #99CCCC;
  }
   .login-display_induction {
   padding-top: 70px;
@@ -398,8 +410,10 @@
  text-align: center!important;
  display: grid!important;
  place-items: center!important;
+ font-family: monospace;
  font-size: 1.75em!important;
 }
 .fc-event:hover {
  background-color: #FFDDFF!important;
 }
+//fullcarenderレイアウトここまで
