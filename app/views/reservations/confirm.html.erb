@@ -1,0 +1,69 @@
+<div class="breadcrumb-navigation">
+  <i class="fa fa-angle-right">&nbsp;</i>
+  <span>HOME<span>
+  <i class="fa fa-angle-right">&nbsp;</i>
+  <span>CHIROPRACTORS<span>
+  <i class="fa fa-angle-right">&nbsp;</i>
+  <span>SHOW<span>
+  <i class="fa fa-angle-right">&nbsp;</i>
+  <span>RESERVATION<span>
+
+<div class="PageHead_practator">
+  <div class="PageHead_practator-title">
+    <h2>RESERVATION</h2>
+  </div>
+  <div class="PageHead_practator-text">
+    予約情報確認画面
+  </div>
+</div>
+
+<div class="signup-display">
+  <h1 class="article-display_title">CONFIRM</h1>
+  <h4 class="signup_chiropractor-display_text">
+    予約情報の確認を行います。
+  </h4>
+  <div class="col-md-4 mx-auto">
+  <table class="table table-bordered text-center mt-4">
+    <tr>
+      <td class="table-active">ご予約日時</td>
+      <td><%= @reservation.start_date.strftime("%Y年%m月%d日#{@wd[@reservation.start_date.wday]} %H:%M") %></td>
+    </tr>
+  </table>
+  </div>
+  <div class="col-md-6 mx-auto">
+    <table class="table table-bordered mt-4 mb-4">
+        <tr>
+          <td class="table-active">ご予約者氏名</td>
+          <td><%= @reservation.name %>様</td>
+        </tr>
+        <tr>
+          <td class="table-active">郵便番号</td>
+          <td><%= @reservation.postal_code %></td>
+        </tr>
+        <tr>
+          <td class="table-active">ご住所</td>
+          <td><%= @reservation.address %></td>
+        </tr>
+        <tr>
+          <td class="table-active">ご連絡可能な電話番号</td>
+          <td><%= @reservation.phone_number %></td>
+        </tr>
+      </table>
+    </div>
+    <h4 class="signup_chiropractor-display_text">
+      上記の内容にお間違いははございませんか？<br>
+      お間違いがなければ「予約を確定する」ボタンを押してください。
+  </h4>
+  <%= form_with model:@reservation, url:reservations_path, method: :post, local:true do |f| %>
+    <%= f.hidden_field :name %>
+    <%= f.hidden_field :postal_code %>
+    <%= f.hidden_field :address %>
+    <%= f.hidden_field :station %>
+    <%= f.hidden_field :phone_number %>
+    <%= f.hidden_field :start_date %>
+    <%= f.hidden_field :end_date %>
+  <div class="reservation_confirm-button">
+    <%= f.submit "予約を確定する", class:"btn btn-secondary col-sm-2" %>
+  </div>
+  <% end %>
+</div>

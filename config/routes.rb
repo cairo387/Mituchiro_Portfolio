@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :events, only: [:index, :new]
   resources :reservations, only: [:new, :create]
   post '/reservations/confirm' => 'reservations#confirm'
+  get '/reservations/completed' => 'reservations#completed'
 
   devise_for :chiropractors, controllers: {
   sessions: 'chiropractors/sessions',

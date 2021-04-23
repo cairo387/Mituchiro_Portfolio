@@ -18,25 +18,23 @@
 </div>
 
 <div class="signup-display">
-  <h6>
-    ご予約日時<%= @reservation.start_date.strftime("%Y年%m月%d日#{@wd[@reservation.start_date.wday]} %H:%M") %>
-  </h6>
   <h1 class="article-display_title">RESERVATION</h1>
   <h4 class="signup_chiropractor-display_text">
     お客様情報の入力画面です。<br>
-    以下の項目をご入力いただき、「予約確認画面へ進む」ボタンを押してください。<br>
+    ご予約に際して、必要な情報の入力をお願いいたします。<br>
+    以下の項目にご入力いただき、「予約確認画面へ進む」ボタンを押してください。<br>
   </h4>
   <div class="col-md-4 mx-auto">
-  <table class="table table-bordered mb-4">
+  <table class="table table-bordered text-center mt-4">
     <tr>
       <td class="table-active">ご予約日時</td>
       <td><%= @reservation.start_date.strftime("%Y年%m月%d日#{@wd[@reservation.start_date.wday]} %H:%M") %></td>
     </tr>
   </table>
   </div>
-  <%= form_with model:@reservation, local:true do |f| %>
+  <%= form_with model:@reservation, url:reservations_confirm_path, method: :post, local:true do |f| %>
     <div class="reservation-display_form">
-      <div class="form-group form-inline mt-4">
+      <div class="form-group form-inline">
         <%= f.label :name, 'ご予約者氏名', class:"col-sm-2 control-label font-weight-lighter small" %>
         <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "佐藤太郎", class:"form-control col-sm-4" %>
       </div>
@@ -58,8 +56,10 @@
 
       <div class="form-group form-inline mt-4">
         <%= f.label :phone_number, 'ご連絡可能な電話番号', class:"col-sm-2 control-label font-weight-lighter small" %>
-        <%= f.text_field :postal_code, autofocus: true, autocomplete: "postal_code", placeholder: "00000000000", class:"form-control col-sm-4" %>
+        <%= f.text_field :phone_number, autofocus: true, autocomplete: "phone_number", placeholder: "00000000000", class:"form-control col-sm-4" %>
       </div>
+      <%= f.hidden_field :start_date %>
+      <%= f.hidden_field :end_date %>
 
       <div class="signup-button">
         <%= f.submit "予約確認画面へ進む", class:"btn btn-secondary col-sm-6" %>

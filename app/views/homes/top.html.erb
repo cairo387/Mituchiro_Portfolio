@@ -5,6 +5,19 @@
     <div class="top-message-buttton">
       <%= link_to "整体師さんを探す", chiropractors_path, class:"btn btn-lg btn-secondary" %>
     </div>
+
+    <div class="top-articles">
+      <% @articles.each do |article| %>
+        <div class="top-articles-box">
+          <%= link_to(article_path(article)) do %>
+            <%= attachment_image_tag(article, :image, format: 'jpeg', fallback: "no-image.png" ,class: "top-articles-box_image") %>
+            <p class="top-articles-box_date"><%= article.created_at.strftime('%Y/%m/%d') %></p>
+            <p class="top-articles-box_title"><%= article.title %><p>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+
     <div class="top-display_solicitation">
       <h4 class="top-display-solicitation_text">
         新規登録をして<br>

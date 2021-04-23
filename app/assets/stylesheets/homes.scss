@@ -32,7 +32,41 @@
   text-align: center;
   padding-top: 15px;
  }
-
+  .top-articles {
+  display: flex;
+ }
+ .top-articles-box {
+  position:relative;
+  background-color: #fff;
+  height: 100px;
+  width: 256px;
+  padding: 0.5em 1em;
+  margin: 2em 0;
+  font-weight: bold;
+  border: 1px solid #eaebed;
+  box-shadow: 2px 2px 6px 0px rgba(0,0,0,0.2);
+ }
+ .top-articles-box:hover {
+  background-color: #badede;
+ }
+ .top-articles-box_date {
+  position: relative;
+  bottom: 75px;
+  left: 80px;
+  color: #555555;
+ }
+ .top-articles-box_title {
+  width: 150px;
+  position: relative;
+  bottom: 85px;
+  left: 80px;
+  color: #555555;
+ }
+ .top-articles-box_image {
+  width: 75px;
+  height: 75px;
+  position:relative;
+ }
  .top-display_solicitation {
   background-color: #fff;
   position:relative;
