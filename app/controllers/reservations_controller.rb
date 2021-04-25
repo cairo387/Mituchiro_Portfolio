@@ -13,6 +13,11 @@ class ReservationsController < ApplicationController
 
   def create
     @reservation = Reservation.new(reservation_params)
+    @event = Event.find_by(start: @reservation.start_date)
+    @event.title = '×'
+    @event.description = '予約不可'
+    @event.textColor="gray"
+    @event.save
     if @reservation.save
       redirect_to reservations_completed_path
     else

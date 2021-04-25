@@ -37,13 +37,14 @@
   line-height: 98px;
  }
  .PageHead_practator-text {
+  height: 98px;
+  width: 64.7%;
   position: relative;
   bottom: 108px;
   left: 332px;
+  padding-top: 15px;
+  padding-left: 15px;
   background-color: #fff;
-  margin-top: 10px;
-  height: 98px;
-  width: 64.7%;
   border-radius: 0 10px 10px 0;
   text-align: left;
  }
@@ -64,61 +65,15 @@
   text-align: center;
  }
  //偶数個の位置を指定する(0からなので注意)
-.chiropractor-box:nth-child(even) {
+.chiropractor-box {
   position:relative;
-  left: 270px;
   height: 240px;
-  width: 320px;
+  width: 480px;
   padding: 0.5em 1em;
-  margin: 2em 0;
+  margin: 30px auto;
   font-weight: bold;
   border: 1px solid #eaebed;
   box-shadow: 2px 2px 6px 0px rgba(0,0,0,0.2);
-}
-//奇数個の位置を指定
-.chiropractor-box:nth-child(odd) {
-  position:relative;
-  left: 700px;
-  bottom: 270px;
-  height: 240px;
-  width: 320px;
-  padding: 0.5em 1em;
-  margin: 2em 0;
-  font-weight: bold;
-  border: 1px solid #eaebed;
-  box-shadow: 2px 2px 6px 0px rgba(0,0,0,0.2);
-}
-.chiropractor-box:nth-child(4) {
- position:relative;
- bottom: 270px;
-}
-.chiropractor-box:nth-child(5) {
- position:relative;
- bottom: 540px;
-}
-.chiropractor-box:nth-child(6) {
- position:relative;
- bottom: 540px;
-}
-.chiropractor-box:nth-child(7) {
- position:relative;
- bottom: 810px;
-}
-.chiropractor-box:nth-child(8) {
- position:relative;
- bottom: 810px;
-}
-.chiropractor-box:nth-child(9) {
- position:relative;
- bottom: 1080px;
-}
-.chiropractor-box:nth-child(10) {
- position:relative;
- bottom: 1080px;
-}
-.chiropractor-box:nth-child(11) {
- position:relative;
- bottom: 1350px;
 }
 .chiropractor-box:hover {
  background-color: #F0F8FF;

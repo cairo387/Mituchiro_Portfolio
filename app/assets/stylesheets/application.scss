@@ -177,10 +177,12 @@
   left: 162px;
   background-color: #fff;
   margin-top: 10px;
+  padding-top: 25px;
+  padding-left: 15px;
   height: 98px;
   width: 76.2%;
   border-radius: 0 10px 10px 0;
-  text-align: center;
+  text-align: left;
  }
 
  .login-display {
@@ -272,10 +274,12 @@
   left: 332px;
   background-color: #fff;
   margin-top: 10px;
+  padding-top: 25px;
+  padding-left: 15px;
   height: 98px;
   width: 64.7%;
   border-radius: 0 10px 10px 0;
-  text-align: center;
+  text-align: left;
  }
 
  .signup-display {
@@ -417,12 +421,18 @@
 .fc-time {
  text-align: center!important;
 }
+.fc-time span{
+ padding-right: 5px;
+}
 .fc-event {
  text-align: center!important;
  display: grid!important;
  place-items: center!important;
- font-family: monospace;
  font-size: 1.75em!important;
+ font-family: ''!important;
+}
+.fc-title {
+ margin-top: 2px;
 }
 .fc-event:hover {
  background-color: #FFDDFF!important;

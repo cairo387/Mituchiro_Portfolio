@@ -139,7 +139,7 @@ $(function () {
         },
         eventClick: function(item, jsEvent, view) {
           if(item.title == '◎'){
-            //遷移先（予約フォーム）に情報を送る
+            //遷移先（予約フォーム）に情報を送る&chiropractor_id=${}
             location.href = `/reservations/new?start=${item.start}&end=${item.end}`
           }
         }

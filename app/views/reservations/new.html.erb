@@ -13,7 +13,8 @@
     <h2>RESERVATION</h2>
   </div>
   <div class="PageHead_practator-text">
-    予約画面
+    ご予約に必要な情報の入力をお願いいたします。<br>
+    内容に誤りがないよう、ご確認をお願いいたします。
   </div>
 </div>
 
@@ -27,8 +28,8 @@
   <div class="col-md-4 mx-auto">
   <table class="table table-bordered text-center mt-4">
     <tr>
-      <td class="table-active">ご予約日時</td>
-      <td><%= @reservation.start_date.strftime("%Y年%m月%d日#{@wd[@reservation.start_date.wday]} %H:%M") %></td>
+      <td class="table-active"><strong>ご予約日時</strong></td>
+      <td><strong><%= @reservation.start_date.strftime("%Y年%m月%d日#{@wd[@reservation.start_date.wday]} %H:%M") %></strong></td>
     </tr>
   </table>
   </div>

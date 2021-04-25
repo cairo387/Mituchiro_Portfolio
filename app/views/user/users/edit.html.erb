@@ -9,15 +9,18 @@
     <h2>USER</h2>
   </div>
   <div class="PageHead_practator-text">
-    <h2>詳細ページ</h2>
+    <p>
+      お客様プロフィールの更新を行うページです。<br>
+      各項目にご入力いただき、編集完了をお願いいたします。
+    </p>
   </div>
 </div>
 
 <div class="user_edit-display">
   <h1 class="user_edit-display_title">EDIT</h1>
   <h4 class="user_edit-display_text">
-    必要情報の更新を行います。<br><br>
-    以下の項目を入力していただき、「編集完了」ボタンを押してください。
+    プロフィール情報の更新を行います。<br><br>
+    以下の項目を入力していただき、<strong>「編集完了」</strong>ボタンを押してください。
   </h4>
   <%= form_with model:@user, url: user_user_path(@user), local:true do |f| %>
     <div class="user_edit-display_form">

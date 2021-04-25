@@ -13,7 +13,8 @@
     <h2>RESERVATION</h2>
   </div>
   <div class="PageHead_practator-text">
-    予約情報確認画面
+    予約情報の確認を行うページです。<br>
+    ご入力いただいた内容に誤りがないか、ご確認お願いいたします。
   </div>
 </div>
 
@@ -25,8 +26,8 @@
   <div class="col-md-4 mx-auto">
   <table class="table table-bordered text-center mt-4">
     <tr>
-      <td class="table-active">ご予約日時</td>
-      <td><%= @reservation.start_date.strftime("%Y年%m月%d日#{@wd[@reservation.start_date.wday]} %H:%M") %></td>
+      <td class="table-active"><strong>ご予約日時</strong></td>
+      <td><strong><%= @reservation.start_date.strftime("%Y年%m月%d日#{@wd[@reservation.start_date.wday]} %H:%M") %></strong></td>
     </tr>
   </table>
   </div>
@@ -51,7 +52,7 @@
       </table>
     </div>
     <h4 class="signup_chiropractor-display_text">
-      上記の内容にお間違いははございませんか？<br>
+      上記の内容にお間違いはございませんか？<br>
       よろしければ<strong>「予約を確定する」</strong>ボタンを押してください。
   </h4>
   <%= form_with model:@reservation, url:reservations_path, method: :post, local:true do |f| %>

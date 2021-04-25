@@ -34,15 +34,17 @@
  }
 
  .PageHead-article_text {
+  height: 98px;
+  width: 75%;
   position: relative;
   bottom: 108px;
   left: 182px;
-  background-color: #fff;
   margin-top: 10px;
-  height: 98px;
-  width: 75%;
+  padding-top: 25px;
+  padding-left: 15px;
+  background-color: #fff;
   border-radius: 0 10px 10px 0;
-  text-align: center;
+  text-align: left;
  }
   .article-index-display {
   position: relative;
