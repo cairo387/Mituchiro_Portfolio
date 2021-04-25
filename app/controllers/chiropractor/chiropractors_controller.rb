@@ -5,6 +5,7 @@ class Chiropractor::ChiropractorsController < ApplicationController
 
   def edit
     @chiropractor = Chiropractor.find(params[:id ])
+    @treatments = Treatment.all
   end
 
   def update

@@ -64,7 +64,6 @@
   line-height: 98px;
   text-align: center;
  }
- //偶数個の位置を指定する(0からなので注意)
 .chiropractor-box {
   position:relative;
   height: 240px;
@@ -79,25 +78,31 @@
  background-color: #F0F8FF;
 }
 .chiropractor-box_name {
-  position:relative;
-  top: 15px;
-  left: 160px;
-  color: #555555;
+ padding-top: 30px;
+ padding-left: 200px;
+ color: #555555;
+ font-size: 48px;
 }
 .chiropractor_box_image {
- position:relative;
- bottom: 45px;
+ position: relative;
+ bottom: 80px;
  border-radius: 50%;
 }
 .chiropractor_box_fee {
  position:relative;
- bottom: 70px;
- left: 120px;
+ bottom: 140px;
+ left: 175px;
  color: #555555;
 }
 .chiropractor_box_nearest-station {
  position:relative;
- bottom: 80px;
- left: 130px;
+ bottom: 150px;
+ left: 175px;
+ color: #555555;
+}
+.chiropractor_box_treatment {
+ position:relative;
+ bottom: 160px;
+ left: 175px;
  color: #555555;
 }
