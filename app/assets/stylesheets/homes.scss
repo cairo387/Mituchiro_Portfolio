@@ -39,7 +39,7 @@
   text-align: center;
   padding-top: 15px;
  }
-  .top-articles {
+ .top-articles {
   display: flex;
  }
  .top-articles-box {
@@ -69,25 +69,72 @@
   left: 80px;
   color: #555555;
  }
+ .top-chiropractors-box_name {
+  color: #555555;
+  font-size: 32px;
+  font-weight: bold;
+  padding-left: 190px;
+  position: relative;
+  bottom: 110px;
+ }
  .top-articles-box_image {
   width: 75px;
   height: 75px;
   position:relative;
  }
+ .top-chiropractors-title_text span{
+  background: #fff;
+  bottom: 50px;
+  right: 335px;
+  border: 1px solid #2f2725;
+  border-radius: 11.5px;
+  display: inline-block;
+  letter-spacing: .08em;
+  padding: 0 15px;
+  position: relative;
+  vertical-align: bottom;
+  z-index: 1;
+ }
+ .top-chiropractors-title_text:after {
+ }
+ .top-chiropractors {
+  display: flex;
+ }
+ .top-chiropractors-box {
+  position:relative;
+  bottom: 70px;
+  background-color: #fff;
+  height: 200px;
+  width: 428px;
+  border: 1px solid #eaebed;
+  box-shadow: 2px 2px 6px 0px rgba(0,0,0,0.2);
+  border-radius: 0 0 30px 0;
+ }
+ .top-chiropractors-box:hover {
+  background-color: #badede;
+ }
+ .top-chiropractors-box_image {
+  margin-top: 10px;
+  margin-left: 10px;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  position:relative;
+ }
  .top-display_solicitation {
   background-color: #fff;
   position:relative;
-  top: 100px;
-  left: 770px;
-  width: 256px;
-  height: 400px;
+  bottom: 60px;
+  width: 1024px;
+  height: 181px;
   text-align:center;
+  padding-bottom: 45px;
  }
 
  .top-display-solicitation_text {
   color: #333333;
-  font-size: 20px;
-  padding-top: 90px;
+  font-size: 28px;
+  padding-top: 45px;
  }
 //Top画面ここまで
 
@@ -128,10 +175,11 @@
   left: 162px;
   background-color: #fff;
   margin-top: 10px;
+  padding-left: 30px;
   height: 98px;
   width: 76%;
   border-radius: 0 10px 10px 0;
-  text-align: center;
+  text-align: left;
  }
  .main-page {
   position: relative;

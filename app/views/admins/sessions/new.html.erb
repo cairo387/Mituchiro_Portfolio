@@ -9,15 +9,15 @@
     <h2>LOGIN</h2>
   </div>
   <div class="PageHead_login_text">
-    <h2>login</h2>
+    <p>こちらは管理者用のログイン画面です。</p>
   </div>
 </div>
 
 <div class="login-display">
 　<h1 class="login-display-title">LOGIN</h1>
   <h4 class="login-display-text">
-    必要事項を入力し、「ログイン」ボタンを押してください。<br><br>
-    <span class="required_item">※こちらは管理者用のログインページです。</span>
+    必要事項を入力し、<strong>「ログインする」</strong>ボタンを押してください。<br><br>
+    <span class="required_item"><i class="fa fa-exclamation-circle"></i>こちらは管理者用のログインページです。</span>
   </h4>
 
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -38,7 +38,7 @@
     </div>
 
     <div class="login-button">
-      <%= f.submit "ログイン", class:"btn btn-secondary col-sm-6 mt-5" %>
+      <%= f.submit "ログインする", class:"btn btn-secondary col-sm-6 mt-5" %>
     </div>
   <% end %>
   </div>

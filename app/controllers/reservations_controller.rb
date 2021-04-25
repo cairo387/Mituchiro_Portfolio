@@ -14,7 +14,7 @@ class ReservationsController < ApplicationController
   def create
     @reservation = Reservation.new(reservation_params)
     if @reservation.save
-      redirect_to root_path
+      redirect_to reservations_completed_path
     else
       render :confirm
     end

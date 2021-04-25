@@ -11,10 +11,12 @@
 
   <body>
       <header class="l-header">
-        <a href="/"><h1 class="header-logo"></h1></a>
+        <%= link_to(root_path, data: {"turbolinks" => false} ) do %>
+          <h1 class="header-logo"></h1>
+        <%end%>
         <nav>
           <ul class="nav-main">
-            <li><%= link_to "HOME", root_path, class:"nav-color ml-5" %></li>
+            <li><%= link_to "HOME", root_path, data: {"turbolinks" => false}, class:"nav-color ml-5" %></li>
             <li><%= link_to "ABOUT", about_path, class:"nav-color ml-4" %></li>
             <li><%= link_to "ARTICLES", articles_path, class:"nav-color ml-4" %></li>
             <li><%= link_to "CHIROPRACTORS", chiropractors_path, class:"nav-color ml-4" %></li>
@@ -51,7 +53,7 @@
         </div>
         <div class="sidebar">
           <p class="sidebar_links"><i class="fa fa-angle-right">&nbsp;</i><%= link_to "Article -read articles-", articles_path, class:"sidebar_links_text" %></p>
-          <p class="sidebar_links"><i class="fa fa-angle-right">&nbsp;</i><%= link_to "Chiropractor -suitable for you-", articles_path, class:"sidebar_links_text" %></p>
+          <p class="sidebar_links"><i class="fa fa-angle-right">&nbsp;</i><%= link_to "Chiropractor -suitable for you-", chiropractors_path, class:"sidebar_links_text" %></p>
           <% if admin_signed_in? %>
             <p class="sidebar_links"><i class="fa fa-angle-right">&nbsp;</i><%= link_to "Article -post an article-", new_admin_article_path, class:"sidebar_links_text" %></p>
             <p class="sidebar_links"><i class="fa fa-angle-right">&nbsp;</i><%= link_to "Genre -add & edit a genre-", admin_genres_path, class:"sidebar_links_text" %></p>

@@ -11,7 +11,7 @@
     <div class="top-message-buttton">
       <%= link_to "整体師さんを探す", chiropractors_path, class:"btn btn-lg btn-secondary" %>
     </div>
-
+    <%# 新着記事を4つまで表示させる %>
     <div class="top-articles">
       <% @articles.each do |article| %>
         <div class="top-articles-box">
@@ -23,15 +23,30 @@
         </div>
       <% end %>
     </div>
+    <div class="chiropractor-title">
+      <h2 class="top-chiropractors-title_text">
+        <span>NEW&nbsp;CHIROPRACTORS</span>
+      </h2>
+    </div>
+　　<%# 新規登録者（整体師）を3人まで表示させる %>
+    <div class="top-chiropractors">
+      <% @chiropractors.each do |chiropractor| %>
+        <div class="top-chiropractors-box">
+          <%= link_to(chiropractor_chiropractor_path(chiropractor), class: "article_links") do %>
+            <%= attachment_image_tag(chiropractor, :image, format: 'jpeg', fallback: "no-image.png" ,class: "top-chiropractors-box_image") %>
+            <p class="top-chiropractors-box_name"><%= chiropractor.nickname %></p>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
 
     <div class="top-display_solicitation">
       <h4 class="top-display-solicitation_text">
-        新規登録をして<br>
-        メンバーになりませんか？
+        新規登録をしてメンバーになりませんか？
       </h4>
-      <div class="top_button">
-        <%= link_to "整体師として登録する", new_chiropractor_registration_path, class:"btn btn-secondary btn-lg mt-5" %>
-        <%= link_to "依頼者として登録する", new_user_registration_path, class:"btn btn-secondary btn-lg mt-5" %>
+      <div class="top_message_button">
+        <%= link_to "整体師として登録する", new_chiropractor_registration_path, class:"btn btn-secondary btn-lg mt-2" %>
+        <%= link_to "依頼者として登録する", new_user_registration_path, class:"btn btn-secondary btn-lg mt-2" %>
       </div>
     </div>
 </div>

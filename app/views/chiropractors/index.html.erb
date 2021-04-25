@@ -9,19 +9,22 @@
     <h2>CHIROPRACTORS</h2>
   </div>
   <div class="PageHead_practator-text">
-    <h2>登録済みの整体師さんの一覧が確認できるページです。</h2>
+    <p>
+      登録済みの整体師さんの一覧が確認できるページです。<br>
+      各整体師
+    </p>
   </div>
 
 <div class="chiropractor-display">
-  <h2 class="chiropractor-display_title">登録済み整体師一覧ページ</h2>
+  <h1 class="chiropractor-display_title">CHIROPRACTORS</h1>
   <% @chiropractors.each do |chiropractor| %>
-    <div class="chiropractor-box">
-      <%= link_to(chiropractor_chiropractor_path(chiropractor)) do %>
+    <%= link_to(chiropractor_chiropractor_path(chiropractor), class: "chiropractor_links") do %>
+      <div class="chiropractor-box">
         <h2 class="chiropractor-box_name"><%= chiropractor.nickname %></h2>
         <%= attachment_image_tag(chiropractor, :image, width:"110px", format: 'jpeg', fallback: "no-image.png" ,class: "chiropractor_box_image") %>
         <p class="chiropractor_box_fee">施術料金&nbsp;&nbsp;¥<%= chiropractor.service_charge.to_s(:delimited) %>/時間</p>
         <p class="chiropractor_box_nearest-station small">最寄り駅&nbsp;&nbsp;🚃<%= chiropractor.nearest_station %></p>
-      <% end %>
-    </div>
+      </div>
+    <% end %>
   <% end %>
 </div>

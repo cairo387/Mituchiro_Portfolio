@@ -1,5 +1,7 @@
 <div class="breadcrumb-navigation_login">
   <i class="fa fa-angle-right">&nbsp;</i>
+  <span>HOME<span>
+  <i class="fa fa-angle-right">&nbsp;</i>
   <span>LOGIN<span>
 
 <div class="PageHead_login">
@@ -14,9 +16,9 @@
 <div class="login-display">
   <h1 class="login-display_title">LOGIN</h1>
   <h4 class="login-display_text">
-    マイページや予約機能のご利用にはログインが必要です。<br>
+    マイページや予約機能のご利用にはログインが必要です。<br><br>
     ご登録いただいたメールアドレスとパスワードを入力し、<br>
-    「ログインする」ボタンを押してください。
+    <strong>「ログインする」</strong>ボタンを押してください。
   </h4>
 
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -32,9 +34,9 @@
       </div>
 
       <div class="login-button">
-        <%= f.submit "ログイン", class:"btn btn-secondary col-sm-6" %>
+        <%= f.submit "ログインする", class:"btn btn-secondary col-sm-6" %>
       </div>
     </div>
   <% end %>
-  <h4 class="login-display_induction">整体師の方向けのログインページは<%= link_to "こちら", new_chiropractor_session_path, class:"signup-display_induction-link" %></h4>
+  <h4 class="login-display_induction">整体師の方向けのログインページは<strong><%= link_to "こちら", new_chiropractor_session_path, class:"signup-display_induction-link" %></strong></h4>
 </div>
