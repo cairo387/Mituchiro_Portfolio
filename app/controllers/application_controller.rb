@@ -43,7 +43,8 @@ class ApplicationController < ActionController::Base
         :nearest_station,
         :treatment_time,
         :phone_number,
-        :email
+        :email,
+        :treatment_id
         ]
     )
   end

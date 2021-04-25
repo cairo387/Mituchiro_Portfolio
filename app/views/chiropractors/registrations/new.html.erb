@@ -68,6 +68,11 @@
         <%= f.text_field :nearest_station, autofocus: true, autocomplete: "nearest_station", placeholder: "東京駅", class:"form-control col-sm-4" %>
       </div>
 
+      <div class="form-group form-inline">
+        <%= f.label :treatment_id, "施術名", class:"col-sm-2 control-label font-weight-lighter small" %>
+        <%= f.collection_select :treatment_id, Treatment.all, :id, :name, class:"col-sm-4 form-control" %>
+      </div>
+
       <div class="form-group form-inline mt-4">
         <%= f.label :service_charge, 'サービス料', class:"col-sm-2 control-label font-weight-lighter small" %>
         <%= f.text_field :service_charge, autofocus: true, autocomplete: "service_charge", placeholder: "一時間当たりのサービス料を入力してください。", class:"form-control col-sm-4" %>

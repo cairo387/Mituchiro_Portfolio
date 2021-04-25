@@ -75,17 +75,23 @@
   box-shadow: 2px 2px 6px 0px rgba(0,0,0,0.2);
 }
 .chiropractor-box:hover {
- background-color: #F0F8FF;
+ background-color: #f5f5f5;
 }
 .chiropractor-box_name {
- padding-top: 30px;
+ padding-top: 20px;
+ padding-bottom: 10px;
  padding-left: 200px;
  color: #555555;
  font-size: 48px;
 }
+.chiropractor-box_name>span {
+ border-bottom:5px solid #990000;
+}
 .chiropractor_box_image {
+ width: 150px;
+ height: 150px;
  position: relative;
- bottom: 80px;
+ bottom: 90px;
  border-radius: 50%;
 }
 .chiropractor_box_fee {
@@ -105,4 +111,8 @@
  bottom: 160px;
  left: 175px;
  color: #555555;
+}
+.chiropractor_paginate {
+ padding-top: 45px;
+  justify-content: center;
 }

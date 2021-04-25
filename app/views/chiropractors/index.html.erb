@@ -21,12 +21,15 @@
   <% @chiropractors.each do |chiropractor| %>
     <%= link_to(chiropractor_chiropractor_path(chiropractor), class: "chiropractor_links") do %>
       <div class="chiropractor-box">
-        <h2 class="chiropractor-box_name"><%= chiropractor.nickname %></h2>
-        <%= attachment_image_tag(chiropractor, :image, width:"150px", format: 'jpeg', fallback: "no-image.png" ,class: "chiropractor_box_image") %>
+        <h2 class="chiropractor-box_name"><span><%= chiropractor.nickname %></span></h2>
+        <%= attachment_image_tag(chiropractor, :image, format: 'jpeg', fallback: "no-image.png" ,class: "chiropractor_box_image") %>
         <p class="chiropractor_box_fee">施術料金&nbsp;&nbsp;¥<%= chiropractor.service_charge.to_s(:delimited) %>/時間</p>
         <p class="chiropractor_box_nearest-station">最寄り駅&nbsp;&nbsp;<%= chiropractor.nearest_station %></p>
         <p class="chiropractor_box_treatment">施術名&nbsp;&nbsp;<%= chiropractor.treatment.name %></p>
       </div>
     <% end %>
   <% end %>
+  <div class="chiropractor_paginate">
+    <%= paginate @chiropractors %>
+  </div>
 </div>
