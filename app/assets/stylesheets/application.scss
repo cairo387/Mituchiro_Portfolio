@@ -438,3 +438,75 @@
  background-color: #FFDDFF!important;
 }
 //fullcarenderレイアウトここまで
+
+//ページネーションのデザインここから
+.pagination>.first {
+  border: 2px solid #696969;
+  background-color: #bbbbbb;
+}
+.pagination>.first:hover {
+  background-color: #badede;;
+}
+.pagination>.first a {
+  color: #fff;
+  padding-right: 10px;
+  font-size: 24px;
+}
+.pagination>.prev {
+  border: 2px solid #696969;
+  background-color: #bbbbbb;
+}
+.pagination>.prev:hover {
+  background-color: #badede;
+}
+.pagination>.prev a {
+  color: #555555;
+  padding-right: 10px;
+  font-size: 24px;
+}
+.pagination>.page {
+  border: 2px solid #696969;
+  background-color: #bbbbbb;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.pagination>.page:hover {
+  background-color: #badede;
+}
+.pagination>.page a {
+  color: #fff;
+  font-size: 24px;
+  text-decoration: none;
+}
+.pagination>.page.current {
+  color: #555555;
+  font-size: 24px;
+}
+.pagination>.page.current:hover {
+  background-color: #bbbbbb
+}
+.pagination>.next {
+  border: 2px solid #696969;
+  background-color: #bbbbbb;
+}
+.pagination>.next:hover {
+  background-color: #badede;
+}
+.pagination>.next a {
+  color: #555555;
+  padding-right: 10px;
+  font-size: 24px;
+}
+.pagination>.last {
+  border: 2px solid #696969;
+  background-color: #bbbbbb;
+}
+.pagination>.last:hover {
+  background-color: #badede;
+}
+.pagination>.last a {
+  color: #fff;
+  padding-right: 10px;
+  font-size: 24px;
+}
+//ページネーションのデザインここまで
