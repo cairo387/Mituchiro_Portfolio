@@ -10,9 +10,22 @@
 
 <div class="PageHead_practator">
   <div class="PageHead_practator-title">
-    <h2>GENRE</h2>
+    <h2>TREATMENT</h2>
   </div>
   <div class="PageHead_practator-text">
-    <h6>施術内容情報の編集管理画面</h6>
+    <p>施術内容情報の編集管理画面</p>
   </div>
+</div>
+<div class="signup-display">
+  <%= form_with model:@treatment, url: admin_treatment_path(@treatment), local:true do |f| %>
+    <div class="user_edit-display_form">
+      <div class="form-group form-inline">
+        <%= f.label :name, '施術名', class:"col-sm-2 control-label font-weight-lighter small" %>
+        <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "", class:"form-control col-sm-4" %>
+      </div>
+      <div class="signup-button">
+        <%= f.submit "編集完了", class:"btn btn-secondary col-sm-6" %>
+      </div>
+    </div>
+  <% end %>
 </div>
