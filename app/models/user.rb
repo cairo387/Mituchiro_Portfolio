@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_many :favorites, dependent: :destroy
   has_many :reviews, dependent: :destroy
+  has_many :reservations, dependent: :destroy
 
    #画像投稿用(refile)
   attachment :image

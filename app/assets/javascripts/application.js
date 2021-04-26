@@ -45,7 +45,6 @@ $(document).ready(function () {
     hidePrevious : false
   });
 });
-
 $(function () {
   // 画面遷移を検知
   $(document).on('turbolinks:load', function () {

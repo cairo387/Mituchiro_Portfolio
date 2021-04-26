@@ -45,11 +45,11 @@
     <% end %>
   <% end %>
   <%#ここまでいいね機能%>
-  <% if chiropractor_signed_in? %>
+  <% if chiropractor_signed_in? && current_chiropractor.id==@chiropractor.id %>
     <%= link_to "プロフィールを編集する", edit_chiropractor_chiropractor_path(@chiropractor), class: "btn btn-secondary col-sm-3 btn_edit" %>
   <% end %>
   <div class="col-md-6 mx-auto">
-    <table class="table">
+    <table class="table mt-5">
       <tr>
         <th>
           <p class="table-text">
@@ -96,7 +96,12 @@
       </tr>
     </table>
   </div>
+  <% if chiropractor_signed_in? && current_chiropractor.id==@chiropractor.id %>
+    <%= link_to "予約状況を確認する", chiropractor_reservation_index_path, class: "btn btn-secondary col-sm-3 btn_confirm" %>
+  <% end %>
 
+
+  <% unless chiropractor_signed_in? %>
   <h4 class="chiropractor_carender-text">
     ご予約は下記のカレンダーから行えます<br>
     表の中の<span class="color-red">◎</span>をクリックするとご予約フォームへ遷移します<br><br>
@@ -106,4 +111,5 @@
   <div id="calendar" class="chiropractor_carender">
     <div id="calendar-<%= @chiropractor.id %>"></div>
   </div>
+  <% end %>
 </div>

@@ -1,0 +1,2 @@
+module Chiropractor::ReservationHelper
+end

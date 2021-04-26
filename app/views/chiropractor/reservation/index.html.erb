@@ -1,0 +1,53 @@
+<div class="breadcrumb-navigation">
+  <i class="fa fa-angle-right">&nbsp;</i>
+  <span>HOME<span>
+  <i class="fa fa-angle-right">&nbsp;</i>
+  <span>CHIROPRACTORS<span>
+  <i class="fa fa-angle-right">&nbsp;</i>
+  <span>SHOW<span>
+  <i class="fa fa-angle-right">&nbsp;</i>
+  <span>CONFIRM<span>
+
+<div class="PageHead_practator">
+  <div class="PageHead_practator-title">
+    <h2>CONFIRM</h2>
+  </div>
+  <div class="PageHead_practator-text">
+    <p>
+      予約状況を確認できるページです。<br>
+      予約の入った日時や、予約者の名前、住所などを確認しておきましょう。
+    </p>
+  </div>
+  <div class="chiropractor-display">
+    <div class="col-md-10 mx-auto">
+      <div class="reservation_table">
+        <table class="table table-hover">
+          <thead class="table-active">
+            <tr>
+              <th>予約開始時間</th>
+              <th>予約者氏名</th>
+              <th>郵便番号</th>
+              <th>住所</th>
+              <th>電話番号</th>
+              <th>最寄り駅</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @reservations.each do |reservation| %>
+              <tr>
+                <td><%= reservation.start_date.strftime("%Y年%m月%d日#{@wd[reservation.start_date.wday]} %H:%M") %></td>
+                <td><%= reservation.name %></td>
+                <td>〒<%= reservation.postal_code %></td>
+                <td><%= reservation.address %></td>
+                <td><%= reservation.phone_number %></td>
+                <td><%= reservation.station %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="reservation_paginate">
+      <%= paginate @reservations %>
+    </div>
+  </div>

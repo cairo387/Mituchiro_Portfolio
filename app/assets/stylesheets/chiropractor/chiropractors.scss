@@ -87,7 +87,7 @@
  }
   .btn_edit {
   position: relative;
-  bottom: 30px;
+  top: 10px;
   left: 465px;
  }
  .table-text {
@@ -109,7 +109,10 @@
   margin: 0 auto;
   width: 50%;
  }
-
+ .btn_confirm {
+  position: relative;
+  left: 465px;
+ }
 //整体師詳細画面ここまで
 
 //整体師編集画面ここから
