@@ -13,9 +13,11 @@
     <h2>RESERVATION</h2>
   </div>
   <div class="PageHead_practator-text">
-    ご予約ありがとうございます。
+    ご予約ありがとうございます。<br>
+    ご予約の履歴はマイページからご確認いただけます。
   </div>
 </div>
 <div class="signup-display">
-  <h1 class="article-display_title">ご予約が完了しました。</h1>
+  <p class="reservation-completed">ご予約が完了しました。</p>
+  <%= link_to "トップ画面へ戻る", root_path, data: {"turbolinks" => false} , class: "btn btn-secondary col-sm-3 btn_completed" %>
 </div>

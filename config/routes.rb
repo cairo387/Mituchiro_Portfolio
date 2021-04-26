@@ -5,8 +5,8 @@ Rails.application.routes.draw do
   resources :chiropractors, only: [:index] do
     resource :favorites, only: [:create, :destroy]
     resource :reviews, only: [:create, :destroy]
+    resource :events, only: [:new]
   end
-  resources :events, only: [:index, :new]
   resources :reservations, only: [:new, :create]
   post '/reservations/confirm' => 'reservations#confirm'
   get '/reservations/completed' => 'reservations#completed'

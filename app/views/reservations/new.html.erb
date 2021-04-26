@@ -23,7 +23,7 @@
   <h4 class="signup_chiropractor-display_text">
     お客様情報入力画面です。<br><br>
     ご予約に際して、必要な情報の入力をお願いいたします。<br>
-    以下の項目にご入力いただき、<strong>「予約確認画面へ進む」</strong>ボタンを押してください。<br><br>
+    以下の項目にご入力いただき、<strong>「予約確認画面へ進む」</strong>ボタンを押してください。<br>
   </h4>
   <div class="col-md-4 mx-auto">
   <table class="table table-bordered text-center mt-4">
@@ -61,6 +61,7 @@
       </div>
       <%= f.hidden_field :start_date %>
       <%= f.hidden_field :end_date %>
+      <%= f.hidden_field :chiropractor_id %>
 
       <div class="signup-button">
         <%= f.submit "予約確認画面へ進む", class:"btn btn-secondary col-sm-6" %>

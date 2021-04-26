@@ -50,6 +50,8 @@ $(function () {
   // 画面遷移を検知
   $(document).on('turbolinks:load', function () {
     if ($('#calendar').length) {
+      const chiropractorId = $('#calendar').children('div').attr('id');
+      console.log(chiropractorId.substr(9));
 
       function Calendar() {
         return $('#calendar').fullCalendar({
@@ -66,7 +68,7 @@ $(function () {
 
       //events: '/events.json', 以下に追加
       $('#calendar').fullCalendar({
-        events: '/events.json',
+        events: `/chiropractors/${chiropractorId.substr(9)}/events/new`,
         //カレンダー上部を年月で表示させる
         titleFormat: 'YYYY年 M月',
         // 月名称
@@ -140,7 +142,7 @@ $(function () {
         eventClick: function(item, jsEvent, view) {
           if(item.title == '◎'){
             //遷移先（予約フォーム）に情報を送る&chiropractor_id=${}
-            location.href = `/reservations/new?start=${item.start}&end=${item.end}`
+            location.href = `/reservations/new?start=${item.start}&end=${item.end}&chiropractor_id=${item.chiropractor_id}`
           }
         }
       });

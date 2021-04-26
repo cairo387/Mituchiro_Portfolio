@@ -48,7 +48,7 @@
  .chiropractor_show-display {
   position: relative;
   background-color: #fff;
-  bottom: 134px;
+  bottom: 102px;
   height: 100%;
   width: 87%;
   padding-bottom: 100px;
@@ -63,66 +63,51 @@
     margin: 2em 0;
     border: double 5px #99CCCC;
  }
- .chiropractor_profile-name {
-  position:relative;
-  top: 80px;
-  left: 140px;
-}
- .favorites {
-  position:relative;
-  top: 45px;
-  left: 210px;
- }
  .chiropractor_image {
   position:relative;
-  bottom: 25px;
-  left: 20px;
+  height: 180px;
+  width: 180px;
+  margin-top: 70px;
+  margin-left: 530px;
   border-radius: 50%;
  }
+ .chiropractor_profile-name {
+  position: relative;
+  padding-top: 30px;
+  text-align: center;
+  color: #555555;
+  font-size: 48px;
+}
+ .favorites {
+  position: relative;
+  bottom: 47px;
+  text-align: center;
+  padding-left: 150px;
+  font-size: 20px;
+ }
   .btn_edit {
-  position:relative;
-  top: 70px;
-  right: 25px;
+  position: relative;
+  bottom: 30px;
+  left: 465px;
  }
- .performance {
-  position:relative;
-  top: 65px;
-  left: 25px;
-  text-decoration:underline;
+ .table-text {
+  text-align: center;
+  padding-top: 10px;
+  font-size: 24px;
+  color: #555555;
  }
- .price {
-  position:relative;
-  top: 165px;
-  left: 80px;
-  text-decoration:underline;
+ .chiropractor_carender-text{
+  padding-top: 30px;
+  text-align: center;
+  color: #555555;
  }
- .fee {
-  position:relative;
-  top: 200px;
-  left: 25px;
- }
-  .profile {
-  position:relative;
-  top: 240px;
-  left: 65px;
-  text-decoration:underline;
- }
- .profile_text {
-  position:relative;
-  top: 280px;
-  left: 60px;
- }
- .method {
-  position:relative;
-  top: 320px;
-  left: 75px;
-  text-decoration:underline;
+ .color-red {
+  color: #CC0000;
  }
  .chiropractor_carender {
- width: 50%;
- position: relative;
- bottom: 600px;
- left: 500px;
+  padding-top: 30px;
+  margin: 0 auto;
+  width: 50%;
  }
 
 //整体師詳細画面ここまで

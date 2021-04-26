@@ -11,48 +11,99 @@
     <h2>CHIROPRACTORS</h2>
   </div>
   <div class="PageHead_practator-text">
-    <h2><%=@chiropractor.nickname%>の詳細ページ</h2>
+    <% if chiropractor_signed_in? %>
+      <p>
+        <%=@chiropractor.nickname%>様のマイページです。<br>
+        プロフィールの編集や、ご予約状況の確認ができます。
+      </p>
+    <% else %>
+      <p>
+        整体師さんの詳細ページです。<br>
+        プロフィールをご確認できる他、ご予約もこのページから行えます。
+      </p>
+    <% end %>
   </div>
 </div>
 
 <div class="chiropractor_show-display">
-  <div class="chiropractor_profile">
-    <h2 class="chiropractor_profile-name"><%= @chiropractor.nickname %></h2>
-    <%#ここからいいね機能%>
-    <% if user_signed_in? %>
-      <% if current_user.favorited_by?(@chiropractor.id) %>
-        <%= link_to chiropractor_favorites_path(@chiropractor), method: :delete, local: true do %>
-          <p class="text-danger favorites">
-            <i class="fa fa-lg fa-heart" aria-hidden="true"></i>
-          </p>
-        <% end %>
-      <% else %>
-        <%= link_to chiropractor_favorites_path(@chiropractor), method: :post, local: true do %>
-          <p class="text-secondary favorites">
-            <i class="fa fa-lg fa-heart" aria-hidden="true"></i>
-          </p>
-        <% end %>
+  <%= attachment_image_tag(@chiropractor, :image, format: 'jpeg', fallback: "no-image.png",class: "chiropractor_image") %>
+  <h2 class="chiropractor_profile-name"><%= @chiropractor.nickname %></h2>
+  <%#ここからいいね機能%>
+  <% if user_signed_in? %>
+    <% if current_user.favorited_by?(@chiropractor.id) %>
+      <%= link_to chiropractor_favorites_path(@chiropractor), method: :delete, local: true do %>
+        <p class="text-danger favorites">
+          <i class="fa fa-lg fa-heart" aria-hidden="true"></i>
+        </p>
+      <% end %>
+    <% else %>
+      <%= link_to chiropractor_favorites_path(@chiropractor), method: :post, local: true do %>
+        <p class="text-secondary favorites">
+          <i class="fa fa-lg fa-heart" aria-hidden="true"></i>
+        </p>
       <% end %>
     <% end %>
-    <%#ここまでいいね機能%>
-    <%= attachment_image_tag(@chiropractor, :image, width:"90px", format: 'jpeg', fallback: "no-image.png",class: "chiropractor_image") %>
-    <%= link_to "EDIT", edit_chiropractor_chiropractor_path(@chiropractor), class: "btn btn-secondary col-sm-6 btn_edit" %>
-    <h2 class="performance">📄Performance</h2>
-    <h2 class="price">💰Price</h2>
-    <h4 class="fee">🚃Fare　　　 &nbsp;¥<%=@chiropractor.fare.to_s(:delimited) %></h4><br>
-    <h4 class="fee">Service Charge¥<%=@chiropractor.service_charge.to_s(:delimited) %></h4>
-    <h2 class="profile">👤Profile</h2>
-    <h4 class="profile_text">Age　　<%= @chiropractor.age %>歳</h4><br>
-    <h4 class="profile_text">Sex
-      <% if @chiropractor.sex == "male" %>
-        male
-      <% elsif @chiropractor.sex == "female" %>
-        female
-      <% end %>
-    </h4>
-    <h2 class="method">Method</h2>
+  <% end %>
+  <%#ここまでいいね機能%>
+  <% if chiropractor_signed_in? %>
+    <%= link_to "プロフィールを編集する", edit_chiropractor_chiropractor_path(@chiropractor), class: "btn btn-secondary col-sm-3 btn_edit" %>
+  <% end %>
+  <div class="col-md-6 mx-auto">
+    <table class="table">
+      <tr>
+        <th>
+          <p class="table-text">
+            施術料金&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            ¥<%=@chiropractor.service_charge.to_s(:delimited) %>/時間
+          </p>
+        </th>
+      </tr>
+      <tr>
+        <th>
+          <p class="table-text">
+            施術名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <%= @chiropractor.treatment.name %>
+          </p>
+          </th>
+      </tr>
+      <tr>
+        <th>
+          <p class="table-text">
+            最寄り駅&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <%= @chiropractor.nearest_station %>
+          </p>
+        </th>
+      </tr>
+      <tr>
+        <th>
+          <p class="table-text">
+            年齢&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <%= @chiropractor.age %>歳
+          </p>
+        </th>
+      </tr>
+      <tr>
+        <th>
+          <p class="table-text">
+            性別&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <% if @chiropractor.sex == "male" %>
+              男性
+            <% elsif @chiropractor.sex == "female" %>
+              女性
+            <% end %>
+          </p>
+        </th>
+      </tr>
+    </table>
   </div>
-  <div class="chiropractor_carender">
-    <div id="calendar"></div>
+
+  <h4 class="chiropractor_carender-text">
+    ご予約は下記のカレンダーから行えます<br>
+    表の中の<span class="color-red">◎</span>をクリックするとご予約フォームへ遷移します<br><br>
+    <small class="color-red"><i class="fa fa-exclamation-circle"></i>ご予約を行うにはログインが必要です</small>
+  </h4>
+
+  <div id="calendar" class="chiropractor_carender">
+    <div id="calendar-<%= @chiropractor.id %>"></div>
   </div>
 </div>

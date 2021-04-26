@@ -1,9 +1,11 @@
 class ReservationsController < ApplicationController
+  before_action :authenticate_user!
   def new
     @wd = ["(日)", "(月)", "(火)", "(水)", "(木)", "(金)", "(土)"]
     @reservation = Reservation.new
-    @reservation.start_date=Time.parse(params[:start])
-    @reservation.end_date=Time.parse(params[:end])
+    @reservation.start_date = Time.parse(params[:start])
+    @reservation.end_date = Time.parse(params[:end])
+    @reservation.chiropractor_id = params[:chiropractor_id]
   end
 
   def confirm
@@ -13,7 +15,8 @@ class ReservationsController < ApplicationController
 
   def create
     @reservation = Reservation.new(reservation_params)
-    @event = Event.find_by(start: @reservation.start_date)
+    @reservation.user_id = current_user.id
+    @event = Event.find_by(chiropractor_id: @reservation.chiropractor_id, start: @reservation.start_date)
     @event.title = '×'
     @event.description = '予約不可'
     @event.textColor="gray"
@@ -30,6 +33,6 @@ class ReservationsController < ApplicationController
 
   private
   def reservation_params
-    params.require(:reservation).permit(:name, :postal_code, :address, :phone_number, :station, :start_date, :end_date)
+    params.require(:reservation).permit(:name, :postal_code, :address, :phone_number, :station, :start_date, :end_date, :chiropractor_id)
   end
 end

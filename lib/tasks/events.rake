@@ -13,13 +13,14 @@ namespace :events do
             description: '予約可能',
             start: DateTime.new(date.year, date.month, date.day, hour, 0, 0),
             end: DateTime.new(date.year, date.month, date.day, hour, 30, 0),
-            #chiropractor_id: 1 カイロユーザーの数だけ作る
+            chiropractor_id: 2
           )
         Event.find_or_create_by(
             title: '◎',
             description: '予約可能',
             start: DateTime.new(date.year, date.month, date.day, hour, 30, 0),
-            end: DateTime.new(date.year, date.month, date.day, hour+1, 0, 0)
+            end: DateTime.new(date.year, date.month, date.day, hour+1, 0, 0),
+            chiropractor_id: 2
           )
       end
     end
