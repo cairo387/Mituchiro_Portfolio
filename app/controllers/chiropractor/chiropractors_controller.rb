@@ -1,9 +1,6 @@
 class Chiropractor::ChiropractorsController < ApplicationController
   def show
     @chiropractor = Chiropractor.find(params[:id])
-    if @chiropractor.id != current_chiropractor.id
-      redirect_to  chiropractor_chiropractor_path(current_chiropractor)
-    end
   end
 
   def edit
