@@ -13,7 +13,10 @@
     <h2>ARTICLES</h2>
   </div>
   <div class="PageHead-article_text">
-    <h2>投稿された記事の編集ページです。</h2>
+    <p>
+      投稿された記事の編集ページです。<br>
+      マークダウン記法で記事を書くことができます。
+    </p>
   </div>
 </div>
 
@@ -33,6 +36,11 @@
       <h4>本文</h4>
       <div class="form-group form-inline">
         <%= f.text_area :body, autofocus: true, autocomplete: "body", size: "30x40", class:"form-control col-sm-7" %>
+      </div>
+
+      <h4>ジャンル選択</h4>
+      <div class="form-group form-inline">
+        <%= f.collection_select :genre_id, @genres, :id, :name, class:"col-sm-10 form-control" %>
       </div>
 
       <div class="article-button">

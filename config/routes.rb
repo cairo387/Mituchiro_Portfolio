@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root to: 'homes#top'
   get '/about' => 'homes#about'
+  post '/homes/guest_sign_in', to: 'homes#new_guest'
   resources :articles, only: [:index, :show]
   resources :chiropractors, only: [:index] do
     resource :favorites, only: [:create, :destroy]
@@ -22,6 +23,10 @@ Rails.application.routes.draw do
   passwords: 'users/passwords',
   registrations: 'users/registrations'
   }
+
+  devise_scope :user do
+    post 'users/guest_sign_in', to: 'users/sessions#guest_sign_in'
+  end
 
   devise_for :admins, controllers: {
   sessions: 'admins/sessions'

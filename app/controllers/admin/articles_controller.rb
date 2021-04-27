@@ -2,12 +2,12 @@ class Admin::ArticlesController < ApplicationController
   before_action :authenticate_admin!
   def new
     @article = Article.new
+    @genres = Genre.all
   end
 
   def create
     @article = Article.new(article_params)
-    @article.admin_id = 1
-    @article.genre_id = 1
+    @article.admin_id = current_admin.id
     if @article.save
       redirect_to articles_path
     else
@@ -17,6 +17,7 @@ class Admin::ArticlesController < ApplicationController
 
   def edit
     @article = Article.find(params[:id])
+    @genres = Genre.all
   end
 
   def update

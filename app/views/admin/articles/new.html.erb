@@ -12,7 +12,7 @@
   </div>
   <div class="PageHead-article_text">
     <p>
-      記事の新規投稿ができる画面です。<br>
+      記事の新規投稿ができるページです。<br>
       マークダウン記法で記事を書くことができます。
     </p>
   </div>
@@ -34,6 +34,11 @@
       <h4>本文</h4>
       <div class="form-group form-inline">
         <%= f.text_area :body, autofocus: true, autocomplete: "body", size: "30x40", class:"form-control col-sm-7" %>
+      </div>
+
+      <h4>ジャンル選択</h4>
+      <div class="form-group form-inline">
+        <%= f.collection_select :genre_id, @genres, :id, :name, class:"col-sm-10 form-control" %>
       </div>
 
       <div class="article-button">

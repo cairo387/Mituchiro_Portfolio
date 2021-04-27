@@ -34,7 +34,9 @@
         <div class="top-chiropractors-box">
           <%= link_to(chiropractor_chiropractor_path(chiropractor), class: "article_links") do %>
             <%= attachment_image_tag(chiropractor, :image, format: 'jpeg', fallback: "no-image.png" ,class: "top-chiropractors-box_image") %>
-            <p class="top-chiropractors-box_name"><%= chiropractor.nickname %></p>
+            <p class="top-chiropractors-box_name"><span><%= chiropractor.nickname %></span></p>
+            <p class="top-chiropractors-box_fee">施術料金&nbsp;&nbsp;¥<%= chiropractor.service_charge.to_s(:delimited) %>/時間</p>
+            <p class="top-chiropractors-box_treatment"><%= chiropractor.treatment.name %></p>
           <% end %>
         </div>
       <% end %>
