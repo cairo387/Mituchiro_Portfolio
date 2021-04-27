@@ -3,7 +3,7 @@ EVENT_END_HOUR = 22.freeze
 
 namespace :events do
   desc "control events"
-  task create_toweek: :production do
+  task create_toweek: :environment do
     today = Date.today
 
     [*today.beginning_of_week..today.end_of_week].each do |date|
