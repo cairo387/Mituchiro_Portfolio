@@ -30,6 +30,17 @@ PDF形式:[ワイヤーフレーム_みつかいろ.pdf](https://github.com/cair
 
 ##  :mag:Challenge List
 :link:リンク:https://docs.google.com/spreadsheets/d/16_N8qmPcaEYF6UqGJHdmsh1gLFV1IKXOHppPOgin4js/edit?usp=sharing
+チャレンジ要素一覧
+ Flexbox
+ Bootstrap
+ SCSS
+ 環境変数導入
+ いいね機能
+ 予約機能
+ カレンダー機能
+ 画像アップロード
+ ユーザー認証
+ 画像スライダー
 
 ## :octocat:Development Environment
 - OS：Linux(CentOS)
