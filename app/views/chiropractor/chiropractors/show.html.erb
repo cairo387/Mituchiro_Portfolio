@@ -26,7 +26,9 @@
 </div>
 
 <div class="chiropractor_show-display">
-  <%= attachment_image_tag(@chiropractor, :image, format: 'jpeg', fallback: "no-image.png",class: "chiropractor_image") %>
+  <div class="image-field">
+    <%= attachment_image_tag(@chiropractor, :image, format: 'jpeg', fallback: "no-image.png",class: "chiropractor_image") %>
+  </div>
   <h2 class="chiropractor_profile-name"><%= @chiropractor.nickname %></h2>
   <%#ここからいいね機能%>
   <% if user_signed_in? %>

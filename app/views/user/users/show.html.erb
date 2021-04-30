@@ -18,9 +18,13 @@
 
 <div class="mypage-display">
   <h1 class="mypage-display_title">MYPAGE</h1>
-  <%= attachment_image_tag(@user, :image, width:"180px", format: 'jpeg', fallback: "no-image.png",class: "user_image") %>
+  <div class="image-position">
+    <%= attachment_image_tag(@user, :image, width:"180px", format: 'jpeg', fallback: "no-image.png",class: "user_image") %>
+  </div>
   <h3 class="user_name"><%= @user.nickname %></h3>
-  <%= link_to "プロフィールを編集する", edit_user_user_path(@user), class: "btn btn-secondary col-sm-2 btn_user_edit mb-5" %>
+  <div class="user_button">
+    <%= link_to "プロフィールを編集する", edit_user_user_path(@user), class: "btn btn-secondary col-sm-2 btn_user_edit mb-5" %>
+  </div>
   <div class="col-md-6 mx-auto">
     <table class="table mt-5">
       <tr>
@@ -57,6 +61,7 @@
       </tr>
     </table>
   </div>
-  <%= link_to "予約状況を確認する", user_reservation_index_path, class: "btn btn-secondary col-sm-3 btn_confirm" %>
-
+  <div class="user_button">
+    <%= link_to "予約状況を確認する", user_reservation_index_path, class: "btn btn-secondary col-sm-3" %>
+  </div>
 </div>

@@ -63,12 +63,13 @@
     margin: 2em 0;
     border: double 5px #99CCCC;
  }
+ .image-field {
+  text-align:center;
+ }
  .chiropractor_image {
-  position:relative;
   height: 180px;
   width: 180px;
   margin-top: 70px;
-  margin-left: 530px;
   border-radius: 50%;
  }
  .chiropractor_profile-name {
@@ -104,10 +105,23 @@
  .color-red {
   color: #CC0000;
  }
+
+
  .chiropractor_carender {
   padding-top: 30px;
   margin: 0 auto;
-  width: 50%;
+  @media screen and (min-width:480px) {
+    /*　画面サイズが480px（スマートフォン）からはここを読み込む*/
+    width: 80%;
+  }
+  @media screen and (min-width:768px) and ( max-width:1024px) {
+    /*　画面サイズが768pxから1024pxまで(タブレット)はここを読み込む　*/
+    width: 70%;
+  }
+  @media screen and (min-width:1024px) {
+   width: 50%;
+    /*　画面サイズが1024pxからはここを読み込む　*/
+  }
  }
  .btn_confirm {
   position: relative;

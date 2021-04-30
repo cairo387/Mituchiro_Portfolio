@@ -139,9 +139,25 @@ $(function () {
           element.css("padding", "5px");
         },
         eventClick: function(item, jsEvent, view) {
-          if(item.title == '◎'){
-            //遷移先（予約フォーム）に情報を送る&chiropractor_id=${}
-            location.href = `/reservations/new?start=${item.start}&end=${item.end}&chiropractor_id=${item.chiropractor_id}`
+          var now = new Date();
+          var d = now.getDay();
+          var h = now.getHours();
+          var calendarDay = new Date(item.start);
+          var d2 = calendarDay.getUTCDay();
+          var h2= calendarDay.getUTCHours();
+
+          if( now > calendarDay ) {
+            alert('予約可能な日付を過ぎています。')
+          }
+          if ( item.title == '◎' && calendarDay > now) {
+            if( d==d2 && h>=h2 ) {
+              alert('予約可能な時間を過ぎています。')
+            }else if (d==d2 && h+1==h2){
+              alert('予約可能かどうかお電話でお確かめください。')
+            }else{
+              //遷移先（予約フォーム）に情報を送る&chiropractor_id=${}
+              location.href = `/reservations/new?start=${item.start}&end=${item.end}&chiropractor_id=${item.chiropractor_id}`
+            }
           }
         }
       });

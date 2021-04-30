@@ -47,19 +47,20 @@
   line-height: 98px;
   text-align: center;
  }
+ .image-position {
+  text-align: center;
+  padding-top: 30px;
+ }
  .user_image {
-  margintop: 30px;
-  margin-left: 555px;
   border-radius: 50%;
  }
  .user_name {
   padding-top: 50px;
   text-align:center;
  }
- .btn_user_edit {
-  position:relative;
-  top:30px;
-  left:540px;
+ .user_button {
+  text-align: center;
+  padding-top: 30px;
  }
  //userのshow画面ここまで
 
