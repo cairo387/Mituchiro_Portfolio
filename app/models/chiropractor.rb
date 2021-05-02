@@ -13,6 +13,10 @@ class Chiropractor < ApplicationRecord
   #画像投稿用(refile)
   attachment :image
 
+  #バリデーション
+  validates :name, presence: true
+  validates :nick_name, presence: true
+
   enum sex: {
     male: 0,
     female: 1,
