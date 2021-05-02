@@ -28,7 +28,9 @@
   </h4>
 
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-    <%= render "chiropractors/shared/error_messages", resource: resource %>
+    <div class="col-md-8 mx-auto error-field">
+      <%= render "chiropractors/shared/error_messages", resource: resource %>
+    </div>
     <div class="signup-display_form">
       <div class="form-group form-inline">
         <%= f.label :nickname, 'ニックネーム', class:"col-sm-2 control-label font-weight-lighter small" %>
