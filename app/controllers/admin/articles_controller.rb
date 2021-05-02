@@ -11,6 +11,7 @@ class Admin::ArticlesController < ApplicationController
     if @article.save
       redirect_to articles_path
     else
+      @genres = Genre.all
       render :new
     end
   end

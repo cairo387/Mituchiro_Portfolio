@@ -1,0 +1,14 @@
+ja:
+  activerecord:
+    models:
+      chiropractor: 入力した情報
+    attributes:
+      chiropractor:
+        email: メールアドレス
+        password: パスワード
+        name: お名前
+        nickname: ニックネーム
+        postal_code: 郵便番号
+        address_city: 住所
+        phone_number: 電話番号
+        age: 年齢

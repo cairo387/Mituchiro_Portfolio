@@ -15,7 +15,15 @@ class Chiropractor < ApplicationRecord
 
   #バリデーション
   validates :name, presence: true
-  validates :nick_name, presence: true
+  validates :nickname, presence: true
+  validates :postal_code, presence: true
+  validates :address_city, presence: true
+  validates :phone_number, presence: true
+  validates :fare, presence: true
+  validates :service_charge, presence: true
+  validates :age, presence: true
+  validates :sex, presence: true
+  validates :treatment_time, presence: true
 
   enum sex: {
     male: 0,

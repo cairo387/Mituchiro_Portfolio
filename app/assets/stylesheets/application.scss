@@ -509,3 +509,11 @@
   font-size: 24px;
 }
 //ページネーションのデザインここまで
+
+//エラー時フォームが崩れないようにするための記述
+.field_with_errors {
+  display: contents;
+  input {
+    @extend .is-invalid;
+  }
+}

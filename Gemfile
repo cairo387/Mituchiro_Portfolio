@@ -64,6 +64,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 #ユーザー認証
 gem 'devise'
 
+#deviseの日本語化に使用
+gem 'devise-i18n'
+
 #レイアウト修正用
 gem 'bootstrap', '~> 4.5'
 #
@@ -95,6 +98,9 @@ gem 'kaminari', '~> 0.17.0'
 
 #ページネーションの見た目を整えるため
 gem 'kaminari-bootstrap', '~> 3.0.1'
+
+#エラーメッセージ日本語化のため
+gem 'rails-i18n'
 
 #機密情報格納用のgem
 gem 'dotenv-rails'

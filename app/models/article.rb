@@ -8,4 +8,5 @@ class Article < ApplicationRecord
   #バリデーション
   validates :title, presence: true
   validates :body, presence: true
+  validates :genre_id, presence: true
 end
