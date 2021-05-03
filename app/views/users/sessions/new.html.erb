@@ -25,6 +25,7 @@
   </h4>
 
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <%= render "users/shared/error_messages", resource: resource %>
     <div class="login-display_form">
       <div class="form-group form-inline">
         <%= f.label :email, 'メールアドレス', class:"col-sm-2 control-label font-weight-lighter small" %>

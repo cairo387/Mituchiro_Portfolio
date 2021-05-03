@@ -1,7 +1,8 @@
 ja:
   activerecord:
     models:
-      chiropractor: 入力した情報
+      chiropractor: ご入力いただいた情報
+      user: ご入力いただいた情報
     attributes:
       chiropractor:
         email: メールアドレス
@@ -12,3 +13,11 @@ ja:
         address_city: 住所
         phone_number: 電話番号
         age: 年齢
+      user:
+        email: メールアドレス
+        name: お名前
+        nickname: ニックネーム
+        password: パスワード
+        postal_code: 郵便番号
+        address_city: 住所
+        phone_number: 電話番号

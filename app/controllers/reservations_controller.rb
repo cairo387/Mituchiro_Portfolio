@@ -24,7 +24,9 @@ class ReservationsController < ApplicationController
     if @reservation.save
       redirect_to reservations_completed_path
     else
-      render :confirm
+      @reservation = Reservation.new(reservation_params)
+      @wd = ["(日)", "(月)", "(火)", "(水)", "(木)", "(金)", "(土)"]
+      render :new
     end
   end
 

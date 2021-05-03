@@ -14,8 +14,8 @@ class Chiropractor < ApplicationRecord
   attachment :image
 
   #バリデーション
-  validates :name, presence: true
-  validates :nickname, presence: true
+  validates :name, presence: true, uniqueness: { case_sensitive: false }
+  validates :nickname, presence: true, uniqueness: { case_sensitive: false }
   validates :postal_code, presence: true
   validates :address_city, presence: true
   validates :phone_number, presence: true

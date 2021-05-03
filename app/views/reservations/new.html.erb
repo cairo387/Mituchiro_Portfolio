@@ -29,11 +29,12 @@
   <table class="table table-bordered text-center mt-4">
     <tr>
       <td class="table-active"><strong>ご予約日時</strong></td>
-      <td><strong><%= @reservation.start_date.strftime("%Y年%m月%d日#{@wd[@reservation.start_date.wday]} %H:%M") %></strong></td>
+      <td><strong><%= @reservation.display_start_date %></strong></td>
     </tr>
   </table>
   </div>
   <%= form_with model:@reservation, url:reservations_confirm_path, method: :post, local:true do |f| %>
+    <%= render "layouts/error_message", model: f.object %>
     <div class="reservation-display_form">
       <div class="form-group form-inline">
         <%= f.label :name, 'ご予約者氏名', class:"col-sm-2 control-label font-weight-lighter small" %>

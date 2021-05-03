@@ -35,7 +35,7 @@
           <tbody>
             <% @reservations.each do |reservation| %>
               <tr>
-                <td><%= reservation.start_date.strftime("%Y年%m月%d日#{@wd[reservation.start_date.wday]} %H:%M") %></td>
+                <td><%= reservation.display_start_date %></td>
                 <td><%= reservation.name %></td>
                 <td>〒<%= reservation.postal_code %></td>
                 <td><%= reservation.address %></td>

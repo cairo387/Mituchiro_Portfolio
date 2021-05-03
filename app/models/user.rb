@@ -11,6 +11,13 @@ class User < ApplicationRecord
    #画像投稿用(refile)
   attachment :image
 
+  #バリデーション
+  validates :name, presence: true, uniqueness: { case_sensitive: false }
+  validates :nickname, presence: true
+  validates :postal_code, presence: true, format: { with: /\A\d{3}[-]\d{4}\z/, message: 'はハイフンありの７桁の半角数字で入力してください' }
+  validates :address_city, presence: true
+  validates :phone_number, presence: true
+
   enum sex: {
     male: 0,
     female: 1,

@@ -1,0 +1,9 @@
+<% if model.errors.any? %>
+  <div class="col-md-8 mx-auto error-field" id="error_explanation mt-3">
+    <ul>
+      <% model.errors.full_messages.each do |message| %>
+        <li class="mt-2 mb-2 font-weight-bold"><i class="fa fa-exclamation-circle text-danger"></i><%= message %></li>
+	    <% end %>
+    </ul>
+  </div>
+<% end %>
