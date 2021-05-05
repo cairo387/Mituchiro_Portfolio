@@ -21,3 +21,12 @@ ja:
         postal_code: 郵便番号
         address_city: 住所
         phone_number: 電話番号
+      reservation:
+        name: お名前
+        station: 最寄り駅
+        postal_code: 郵便番号
+        address: 住所
+        phone_number: 電話番号
+      article:
+        title: タイトル
+        body: 本文

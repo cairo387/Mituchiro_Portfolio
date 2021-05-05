@@ -20,6 +20,7 @@
 <div class="article-display">
   <h1 class="article-display_title">New Post</h1>
   <%= form_with model:@article, url: admin_articles_path, local:true do |f| %>
+    <%= render "layouts/error_message", model: f.object %>
     <div class="article-display_form">
       <h4>タイトル</h4>
       <div class="form-group form-inline">
