@@ -15,10 +15,10 @@ class HomesController < ApplicationController
       # 例えば name を入力必須としているならば， user.name = "ゲスト" なども必要
       user.nickname = 'ゲスト'
       user.name = 'ゲスト太郎'
-      user.postal_code = '1111111'
+      user.postal_code = '100-0000'
       user.address_city = 'ゲスト県ゲスト市ゲスト町1丁目'
       user.address_street = '111-11'
-      user.phone_number = '00000000000'
+      user.phone_number = '09000000000'
     end
     sign_in user
     redirect_to root_path, notice: 'ゲストユーザーとしてログインしました。'
