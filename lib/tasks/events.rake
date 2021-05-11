@@ -5,9 +5,9 @@ namespace :events do
   desc "control events"
   task create_toweek: :environment do
     today = Date.today
-    three_month = today >> 3
+    # three_month = today >> 3
 
-    [*today.next_month.beginning_of_month..three_month.beginning_of_month].each do |date|
+    [*today.beginning_of_month..today.end_of_month].each do |date|
       [*EVENT_START_HOUR..EVENT_END_HOUR].each do |hour|
         Event.find_or_create_by(
             title: '◎',
@@ -67,5 +67,67 @@ namespace :events do
           )
       end
     end
+
+
+    # [*today.next_month.beginning_of_month..three_month.beginning_of_month].each do |date|
+    #   [*EVENT_START_HOUR..EVENT_END_HOUR].each do |hour|
+    #     Event.find_or_create_by(
+    #         title: '◎',
+    #         description: '予約可能',
+    #         start: DateTime.new(date.year, date.month, date.day, hour, 0, 0),
+    #         end: DateTime.new(date.year, date.month, date.day, hour, 30, 0),
+    #         chiropractor_id: 1
+    #       )
+    #     Event.find_or_create_by(
+    #         title: '◎',
+    #         description: '予約可能',
+    #         start: DateTime.new(date.year, date.month, date.day, hour, 30, 0),
+    #         end: DateTime.new(date.year, date.month, date.day, hour+1, 0, 0),
+    #         chiropractor_id: 1
+    #       )
+    #     Event.find_or_create_by(
+    #         title: '◎',
+    #         description: '予約可能',
+    #         start: DateTime.new(date.year, date.month, date.day, hour, 0, 0),
+    #         end: DateTime.new(date.year, date.month, date.day, hour, 30, 0),
+    #         chiropractor_id: 2
+    #       )
+    #     Event.find_or_create_by(
+    #         title: '◎',
+    #         description: '予約可能',
+    #         start: DateTime.new(date.year, date.month, date.day, hour, 30, 0),
+    #         end: DateTime.new(date.year, date.month, date.day, hour+1, 0, 0),
+    #         chiropractor_id: 2
+    #       )
+    #     Event.find_or_create_by(
+    #         title: '◎',
+    #         description: '予約可能',
+    #         start: DateTime.new(date.year, date.month, date.day, hour, 0, 0),
+    #         end: DateTime.new(date.year, date.month, date.day, hour, 30, 0),
+    #         chiropractor_id: 3
+    #       )
+    #     Event.find_or_create_by(
+    #         title: '◎',
+    #         description: '予約可能',
+    #         start: DateTime.new(date.year, date.month, date.day, hour, 30, 0),
+    #         end: DateTime.new(date.year, date.month, date.day, hour+1, 0, 0),
+    #         chiropractor_id: 3
+    #       )
+    #     Event.find_or_create_by(
+    #         title: '◎',
+    #         description: '予約可能',
+    #         start: DateTime.new(date.year, date.month, date.day, hour, 0, 0),
+    #         end: DateTime.new(date.year, date.month, date.day, hour, 30, 0),
+    #         chiropractor_id: 4
+    #       )
+    #     Event.find_or_create_by(
+    #         title: '◎',
+    #         description: '予約可能',
+    #         start: DateTime.new(date.year, date.month, date.day, hour, 30, 0),
+    #         end: DateTime.new(date.year, date.month, date.day, hour+1, 0, 0),
+    #         chiropractor_id: 4
+    #       )
+    #   end
+    # end
   end
 end

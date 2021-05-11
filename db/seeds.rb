@@ -91,7 +91,7 @@ Chiropractor.create!(
       },
       {
          id: 3,
-         email: "lohn@test.com",
+         email: "john@test.com",
          treatment_id: 6,
          nickname: "John",
          name: "John Winston Ono Lennon",
